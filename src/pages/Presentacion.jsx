@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
-import { ChevronLeft, ChevronRight, ChevronDown, Maximize2, Minimize2, PawPrint, Heart, DollarSign, BarChart3, Target, CheckCircle, TrendingUp, BookOpen, Lightbulb, ArrowRight, Bell, ClipboardList, X, MessageSquareText, HelpCircle, ZoomIn, Users, User, Cloud, Handshake, Calendar, ClipboardCheck, Monitor, Scale, GraduationCap, Building2, Landmark, Wallet, Building, UserCheck, Hospital, Hourglass, RefreshCw, Shield, TrendingDown, Plus, Check, Star, Coins, Banknote } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ChevronDown, Maximize2, Minimize2, PawPrint, Heart, DollarSign, BarChart3, Target, CheckCircle, TrendingUp, BookOpen, Lightbulb, ArrowRight, Bell, ClipboardList, X, MessageSquareText, HelpCircle, ZoomIn, Users, User, Cloud, Handshake, Calendar, ClipboardCheck, Monitor, Scale, GraduationCap, Building2, Landmark, Wallet, Building, UserCheck, Hospital, Hourglass, RefreshCw, Shield, TrendingDown, Plus, Check, Star, Coins, Banknote, Database, GitFork } from 'lucide-react'
 
 /* ── Slide metadata ── */
 const slides = [
@@ -10,7 +10,9 @@ const slides = [
   { id: 'p-evaluacion', gradient: 'from-amber-900 via-yellow-800 to-orange-900 dark:from-amber-950 dark:via-yellow-900 dark:to-orange-950', icon: Scale },
   { id: 'p1-opcion',  gradient: 'from-emerald-900 via-teal-800 to-cyan-900 dark:from-emerald-950 dark:via-teal-900 dark:to-cyan-950', icon: Target },
   { id: 'p2-justificacion', gradient: 'from-blue-900 via-cyan-800 to-sky-900 dark:from-blue-950 dark:via-cyan-900 dark:to-sky-950', icon: BarChart3 },
-  { id: 'p-metodos',  gradient: 'from-purple-900 via-violet-800 to-indigo-900 dark:from-purple-950 dark:via-violet-900 dark:to-indigo-950', icon: BookOpen },
+  { id: 'p-metodos',    gradient: 'from-purple-900 via-violet-800 to-indigo-900 dark:from-purple-950 dark:via-violet-900 dark:to-indigo-950', icon: BookOpen },
+  { id: 'p-tecnologias', gradient: 'from-teal-900 via-cyan-800 to-blue-900 dark:from-teal-950 dark:via-cyan-900 dark:to-blue-950', icon: Monitor },
+  { id: 'p-riesgos',    gradient: 'from-red-900 via-rose-800 to-pink-900 dark:from-red-950 dark:via-rose-900 dark:to-pink-950', icon: Shield },
   { id: 'p3-resultados',    gradient: 'from-violet-900 via-purple-800 to-fuchsia-900 dark:from-violet-950 dark:via-purple-900 dark:to-fuchsia-950', icon: TrendingUp },
   { id: 'p4-reflexion',     gradient: 'from-cyan-900 via-teal-800 to-emerald-900 dark:from-cyan-950 dark:via-teal-900 dark:to-emerald-950', icon: Lightbulb },
   { id: 'gracias',    gradient: 'from-pink-900 via-rose-800 to-red-900 dark:from-pink-950 dark:via-rose-900 dark:to-red-950', icon: Heart },
@@ -61,11 +63,34 @@ RESPUESTA (3-4 min):
   'p-metodos': `HERRAMIENTAS Y MÉTODOS — Soporte técnico a Indicadores 2 y 5.
 
 RESPUESTA (1.5 min):
-"Las herramientas colaborativas utilizadas fueron: Ofimática 365 para documentación y tablas; Project Libre para cronograma y asignación de recursos (workbench con WBS y ruta crítica); Git/GitHub para control de versiones y trabajo colaborativo en código; Vercel para despliegue continuo; y Neon (PostgreSQL) para base de datos en la nube.
+"Las herramientas colaborativas utilizadas fueron: Jira para gestión de sprints y backlog del proyecto; GitHub para control de versiones, code review y CI/CD con Vercel; Google Meet y Discord para reuniones semanales de coordinación y daily syncs; y la Sala de Proyectos con pizarra para planning semanal y TV para revisiones de sprint.
 
 Los métodos de análisis aplicados: Matriz Multicriterio Ponderada (selección de alternativas con 6 criterios y 3 dimensiones), Análisis Financiero (VAN/TIR/PRI con flujo de caja descontado a 12% anual), Análisis de Capacidad Financiera (4 indicadores), y Benchmark con industria SaaS.
 
 Todo el trabajo se realizó en la Sala de Proyectos, usando pizarra para sesiones de planning semanales y TV para revisiones de sprint."`,
+  'p-tecnologias': `TECNOLOGÍAS UTILIZADAS — Stack técnico del proyecto.
+
+RESPUESTA (1 min):
+"El stack tecnológico de Patitas Conectadas fue:
+• Frontend: React 18 + Vite + Tailwind CSS 3 + Framer Motion — SPA moderna, rápida y responsiva con animaciones fluidas. Despliegue en Vercel.
+• Backend: Express 5 + Node.js 20 — API REST con manejo asíncrono, exportada como handler nativo de Vercel (sin serverless-http).
+• Base de Datos: PostgreSQL 16 en Neon (cloud serverless) con pool asíncrono y helpers all/get/run para consultas parametrizadas.
+• Control de Versiones: Git + GitHub con CI/CD integrado a Vercel — cada push a master despliega automáticamente.
+• Metodología: Ágil (Scrum) con entregas quincenales, planificación en Jira y reuniones semanales por Google Meet.
+
+¿Por qué estas tecnologías? React + Vite da la mejor experiencia de desarrollo con hot reload rápido. Express 5 es compatible con serverless de Vercel. PostgreSQL en Neon ofrece BD gestionada gratuita con alta disponibilidad. Elegimos tecnologías probadas y maduras para minimizar riesgos técnicos y entregar rápido."`,
+  'p-riesgos': `MITIGACIÓN DE RIESGOS — Soporte complementario a Indicadores 4, 5 y 6.
+
+RESPUESTA (1.5 min):
+"Identificamos y mitigamos 4 riesgos clave del proyecto:
+
+1. SOBREESTIMACIÓN DE INGRESOS (Riesgo financiero alto): Inicialmente asumí 30% de conversión a Premium. Lo mitigé investigando benchmarks SaaS reales de OpenView 2024 y SaaS Capital 2024 — la tasa real es 15-20%. Ajusté al 10% conservador, haciendo el modelo defendible. Impacto: VAN bajó de $480M a $306M, pero sigue siendo positivo y atractivo.
+
+2. RIESGO TÉCNICO POR ARQUITECTURA COMPLEJA: La Opción 2 (Cascada Total) requería microservicios e IA avanzada con 18+ meses de desarrollo. Se mitigó seleccionando la Opción 1 (MVP Ágil PRO) con entregas quincenales — validación temprana, tecnología probada (React/Express/PostgreSQL), equipo de 5 roles.
+
+3. RIESGO NORMATIVO POR PRIVACIDAD DE DATOS: La Opción 3 (SaaS Híbrido) almacenaba datos en servidores de terceros sin control sobre cumplimiento Ley 19.628. Se descartó. Las Opciones 1 y 2 cumplen con GDPR-by-design y desarrollo propio.
+
+4. RIESGO FINANCIERO POR CAPACIDAD DE PAGO: Se calculó con 4 ratios: Liquidez 6.7 meses (cubre desarrollo completo), Cobertura Intereses 5.6x (>2.5x mínimo), Capacidad Pago 117% (holgura 17% sobre cuota), Apalancamiento 8:1 (favorable porque TIR 178.2% >> 12%)."`,
   'p3-resultados': `INDICADOR 6 (20%) — Explica los resultados del proceso de forma clara y persuasiva.
   
 RESPUESTA (3-4 min):
@@ -279,7 +304,15 @@ const qaData = [
   },
   {
     q: 'Herramientas y Métodos: ¿Qué herramientas colaborativas y métodos de análisis se utilizaron para justificar la elección del proyecto?',
-    a: 'Herramientas colaborativas: Ofimática 365 (documentación compartida y tablas dinámicas), Project Libre (cronograma WBS con ruta crítica y asignación de recursos), Git/GitHub (control de versiones con trabajo colaborativo en código y code review), Vercel (despliegue continuo CI/CD), Neon PostgreSQL (base de datos en la nube), y Sala de Proyectos (pizarra para planning semanal, TV para sprint reviews). Métodos de análisis: (1) Matriz Multicriterio Ponderada — 6 criterios × 3 alternativas con puntuación 0-20; (2) VAN/TIR/PRI — flujo de caja descontado al 12% anual; (3) Capacidad Financiera — 4 ratios (liquidez 6.7m, cobertura 5.6x, pago 117%, apalancamiento 8:1); (4) Benchmark SaaS — comparación con industria (OpenView, SaaS Capital 2024). Mitigación de errores: ajuste de ingresos por benchmarks reales (30%→10%), riesgo técnico cubierto con MVP+entregas quincenales, riesgo normativo evaluado con marco legal, y riesgo financiero con TIR 178.2% >> 12%.'
+    a: 'Herramientas colaborativas: Jira (gestión de sprints y backlog del proyecto), GitHub (control de versiones con code review y CI/CD con Vercel), Google Meet y Discord (reuniones semanales de coordinación, daily syncs y revisiones de sprint), y Sala de Proyectos (pizarra para planning semanal, TV para sprint reviews). Métodos de análisis: (1) Matriz Multicriterio Ponderada — 6 criterios × 3 alternativas con puntuación 0-20; (2) VAN/TIR/PRI — flujo de caja descontado al 12% anual; (3) Capacidad Financiera — 4 ratios (liquidez 6.7m, cobertura 5.6x, pago 117%, apalancamiento 8:1); (4) Benchmark SaaS — comparación con industria (OpenView, SaaS Capital 2024). Mitigación de errores: ajuste de ingresos por benchmarks reales (30%→10%), riesgo técnico cubierto con MVP+entregas quincenales, riesgo normativo evaluado con marco legal, y riesgo financiero con TIR 178.2% >> 12%.'
+  },
+  {
+    q: 'Mitigación de Riesgos: ¿Qué riesgos se identificaron en el proyecto y cómo se mitigaron? ¿Cómo impactaron en la selección de la alternativa final?',
+    a: 'Identificamos 4 riesgos clave: (1) SOBREESTIMACIÓN DE INGRESOS — asumí 30% conversión Premium; mitigado con benchmarks SaaS reales (OpenView 2024, SaaS Capital 2024) ajustando al 10% conservador. (2) ARQUITECTURA COMPLEJA — Opción 2 requería 18+ meses con microservicios e IA avanzada; mitigado seleccionando Opción 1 (MVP Ágil PRO) con entregas quincenales, 5 roles y tecnología probada (React/Express/PostgreSQL). (3) INCUMPLIMIENTO NORMATIVO — Opción 3 almacenaba datos en terceros sin control sobre Ley 19.628; Opción 3 descartada por puntuar 5/15 en privacidad y PI. Opciones 1 y 2 cumplen con GDPR-by-design y desarrollo propio (15/15). (4) CAPACIDAD DE PAGO INSUFICIENTE — préstamo $50M al 12% requiere evaluación rigurosa; 4 ratios calculados: Liquidez 6.7m (cubre desarrollo), Cobertura Intereses 5.6x (>2.5x mínimo), Capacidad Pago 117% (holgura 17%), Apalancamiento 8:1 (favorable porque TIR 178.2% >> 12%). Conclusión: La Opción 1 es la única que minimiza todos los riesgos simultáneamente.'
+  },
+  {
+    q: 'Tecnologías del Proyecto: ¿Qué stack tecnológico se utilizó y por qué se eligieron esas tecnologías?',
+    a: 'Stack completo: React 18 + Vite (frontend SPA con hot reload y Tailwind CSS 3), Express 5 + Node.js 20 (API REST serverless compatible con Vercel), PostgreSQL 16 en Neon (BD gestionada serverless con pool asíncrono), Git + GitHub + Vercel (CI/CD integrado con despliegue automático desde master). ¿Por qué? React + Vite da la mejor DX con HMR ultrarrápido. Express 5 funciona como handler nativo de Vercel sin serverless-http. PostgreSQL en Neon ofrece BD robusta sin operaciones de servidor. Todas son tecnologías probadas, maduras y con amplia comunidad — minimizan riesgos técnicos y permiten entregar el MVP en 6 meses con equipo de 5 roles.'
   }
 ]
 
@@ -416,12 +449,10 @@ CONCLUSIÓN: Opción 1 seleccionada por equilibrio entre viabilidad técnica, fi
     answer: `Respuesta fundamentada — Herramientas y Métodos:
 
 HERRAMIENTAS COLABORATIVAS:
-1. Ofimática 365: Documentación compartida en tiempo real, tablas dinámicas para flujo de caja, informes colaborativos.
-2. Project Libre: Cronograma con WBS (Work Breakdown Structure), ruta crítica, asignación de recursos por rol y seguimiento de hitos.
-3. Git/GitHub: Control de versiones distribuido, trabajo colaborativo en código (branches, pull requests, code review), CI/CD integrado.
-4. Vercel: Despliegue continuo automático desde GitHub — cada push a master despliega en producción.
-5. Neon (PostgreSQL): Base de datos en la nube con pool asíncrono, migraciones y seed data.
-6. Sala de Proyectos: Pizarra para planning semanal con equipo, TV para revisiones de sprint y demo al docente.
+1. Jira: Gestión de sprints, backlog del proyecto, asignación de tareas y seguimiento de incidencias con metodología ágil.
+2. GitHub: Control de versiones distribuido con Git, trabajo colaborativo en código (branches, pull requests, code review), y CI/CD integrado con Vercel para despliegue continuo — cada push a master despliega en producción.
+3. Google Meet / Discord: Reuniones semanales de coordinación del equipo, daily syncs y revisiones de sprint.
+4. Sala de Proyectos: Pizarra para planning semanal con equipo, TV para revisiones de sprint y demo al docente.
 
 MÉTODOS DE ANÁLISIS:
 1. Matriz Multicriterio Ponderada: 6 criterios × 3 alternativas con puntuación 0-20 y fuentes verificables (CTO, CFO, marco legal).
@@ -434,6 +465,55 @@ MITIGACIÓN DE ERRORES:
 · Riesgo técnico: MVP + entregas quincenales → validación temprana.
 · Riesgo normativo: Evaluación PDP + PI → opción 3 descartada.
 · Riesgo financiero: TIR 178.2% >> 12%, capacidad pago 117% → holgura 17%.`
+  },
+  pregunta7: {
+    title: 'Mitigación de Riesgos del Proyecto',
+    subtitle: '¿Qué riesgos se identificaron y cómo se mitigaron? ¿Cómo impactaron en la selección de la alternativa final?',
+    answer: `Respuesta fundamentada — Mitigación de Riesgos:
+
+Identificamos y gestionamos 4 riesgos clave:
+
+1. SOBREESTIMACIÓN DE INGRESOS (Riesgo financiero — Alto):
+   Identificación: Asumí inicialmente 30% de conversión a plan Premium ($3.000/mes), sobreestimando ingresos B2C.
+   Mitigación: Investigación de benchmarks SaaS reales — OpenView 2024 reporta 15-20% de conversión promedio en SaaS, SaaS Capital 2024 confirma 12-18%. Ajusté la tasa al 10% conservador, haciendo el modelo defendible ante inversionistas y CFO.
+   Impacto: VAN bajó de $480M a $306M, pero TIR sigue en 178.2% >> 12%. El modelo es realista, no optimista.
+
+2. ARQUITECTURA TÉCNICA COMPLEJA (Riesgo técnico — Medio):
+   Identificación: La Opción 2 (Cascada Total) requería arquitectura de microservicios, IA avanzada, 18+ meses de desarrollo con 12+ roles especializados.
+   Mitigación: Selección de Opción 1 (MVP Ágil PRO) con entregas quincenales — validación temprana, tecnología probada (React/Vite + Express/Node.js + PostgreSQL), equipo factible de 5 roles, inversión controlada de $46.56M en RRHH. La madurez tecnológica y el equipo reducido minimizan el riesgo de fracaso técnico.
+
+3. INCUMPLIMIENTO NORMATIVO (Riesgo normativo — Crítico):
+   Identificación: Opción 3 (SaaS Híbrido) almacena datos de mascotas, dueños y clínicas en servidores de terceros sin control sobre cumplimiento de la Ley 19.628 de Privacidad de Datos ni Propiedad Intelectual del código fuente.
+   Mitigación: Opción 3 descartada por puntuar 5/15 en Privacidad y 5/15 en PI. Las Opciones 1 y 2 cumplen con GDPR-by-design y desarrollo propio, obteniendo 15/15 en ambos criterios normativos.
+
+4. CAPACIDAD DE PAGO INSUFICIENTE (Riesgo financiero — Medio):
+   Identificación: Préstamo de $50M al 12% anual requiere evaluación rigurosa de capacidad de pago.
+   Mitigación: 4 ratios calculados: Liquidez 6.7 meses (cubre todo el desarrollo de Fase 1 sin ingresos), Cobertura Intereses 5.6x (>2.5x mínimo exigido por banca), Capacidad Pago 117% (holgura del 17% sobre la cuota mensual), Apalancamiento 8:1 (favorable porque TIR 178.2% >> 12% de interés).
+
+CONCLUSIÓN: La Opción 1 (MVP Ágil PRO) es la única alternativa que minimiza los 4 riesgos simultáneamente — financiero (VAN positivo, capacidad pago 117% con holgura), técnico (MVP con entregas quincenales valida temprano), normativo (desarrollo propio con GDPR-by-design) y operativo (equipo factible de 5 roles en Fase 1, 4 en Fase 2).`
+  },
+  pregunta8: {
+    title: 'Tecnologías Utilizadas — Stack Técnico',
+    subtitle: '¿Qué tecnologías se usaron en el proyecto y por qué? ¿Cómo se justifica la elección del stack?',
+    answer: `Respuesta fundamentada — Tecnologías del Proyecto:
+
+STACK TÉCNICO COMPLETO:
+Frontend: React 18 + Vite + Tailwind CSS 3 + Framer Motion
+Backend: Express 5 + Node.js 20
+Base de Datos: PostgreSQL 16 en Neon (cloud serverless)
+DevOps: Git + GitHub + Vercel (CI/CD integrado)
+
+JUSTIFICACIÓN DE CADA TECNOLOGÍA:
+
+1. React 18 + Vite: Elegimos React por su ecosistema maduro, componentes reutilizables y la mejor experiencia de desarrollo (DX). Vite aporta hot reload ultrarrápido (sub-second HMR) y builds optimizados. Tailwind CSS 3 permite diseño responsivo rápido sin CSS personalizado. Framer Motion da animaciones fluidas sin configuración compleja. Beneficio: desarrollo rápido con UI moderna y responsiva.
+
+2. Express 5 + Node.js 20: Express 5 es compatible nativamente con serverless de Vercel — exportamos la app como handler directo sin serverless-http. Node 20 LTS ofrece rendimiento mejorado, soporte largo y amplia comunidad. Beneficio: API REST liviana que funciona sin servidor dedicado ni capa extra de compatibilidad.
+
+3. PostgreSQL 16 + Neon: Elegimos PostgreSQL por ser la BD relacional más madura con soporte JSON, joins eficientes y amplio ecosistema. Neon ofrece BD serverless gestionada con alta disponibilidad, pool asíncrono y tier gratuito generoso. Beneficio: BD robusta sin operaciones de servidor, con consultas parametrizadas seguras (helpers all/get/run).
+
+4. Git + GitHub + Vercel: CI/CD integrado sin configuración — cada push a master despliega automáticamente en producción. GitHub ofrece code review y trabajo colaborativo. Beneficio: despliegue continuo sin operaciones DevOps dedicadas.
+
+CONCLUSIÓN: El stack completo (React → Express → PostgreSQL → Vercel) usa tecnologías probadas, maduras y con amplia comunidad. Esto minimiza riesgos técnicos, acelera el desarrollo y permite entregar valor en 6 meses con equipo reducido de 5 roles.`
   }
 }
 
@@ -442,8 +522,10 @@ const rubricSlideMap = {
   3: rubricAnswers.pregunta1,
   4: rubricAnswers.pregunta2,
   5: rubricAnswers.pregunta6,
-  6: rubricAnswers.pregunta3,
-  7: rubricAnswers.pregunta4,
+  6: rubricAnswers.pregunta8,
+  7: rubricAnswers.pregunta7,
+  8: rubricAnswers.pregunta3,
+  9: rubricAnswers.pregunta4,
 }
 
 /* ── Main component ── */
@@ -785,8 +867,8 @@ export default function Presentacion() {
               </div>
             </section>}
 
-            {/* ══════════ SLIDE 3 — INDICADOR 5 (20%) ══════════ */}
-            {slide === 3 && <section className="w-full max-w-5xl">
+            {/* ══════════ SLIDE 4 — INDICADOR 5 (20%) ══════════ */}
+            {slide === 4 && <section className="w-full max-w-5xl">
               <div className="flex items-center gap-2 mb-3 justify-center">
                 <button onClick={() => setRubricData(rubricAnswers.pregunta2)} type="button" className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity active:scale-95 focus-visible:ring-2 focus-visible:ring-white/50 rounded-lg px-2 py-1" title="Click para respuesta fundamentada">
                   <BarChart3 className="w-5 h-5 sm:w-7 sm:h-7 text-blue-300" />
@@ -844,7 +926,7 @@ export default function Presentacion() {
                   <BookOpen className="w-6 h-6 sm:w-8 sm:h-8 text-purple-300" />
                 </motion.div>
                 <h2 className="text-xl sm:text-3xl font-black text-white">Herramientas Colaborativas y Métodos de Análisis</h2>
-                <p className="text-white/50 text-[10px] sm:text-sm mt-1">Ofimática 365 · Project Libre · Git/GitHub · Vercel · Sala de Proyectos</p>
+                <p className="text-white/50 text-[10px] sm:text-sm mt-1">Jira · GitHub · Google Meet / Discord · Vercel · Neon · Sala de Proyectos</p>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 max-w-6xl mx-auto">
@@ -853,16 +935,16 @@ export default function Presentacion() {
                     <h3 className="text-purple-300 font-bold text-xs sm:text-sm mb-2 flex items-center gap-1.5"><BookOpen className="w-4 h-4" /> Herramientas Colaborativas</h3>
                     <div className="grid grid-cols-2 gap-1.5">
                       <div className="bg-white/5 rounded-lg p-2 border border-white/5">
-                        <div className="text-white/80 font-semibold text-[9px] sm:text-xs">Ofimática 365</div>
-                        <p className="text-white/40 text-[7px] sm:text-[9px]">Documentación compartida, tablas dinámicas, informes en tiempo real</p>
+                        <div className="text-white/80 font-semibold text-[9px] sm:text-xs">Jira / Project Libre</div>
+                        <p className="text-white/40 text-[7px] sm:text-[9px]">Gestión de sprints, backlog, WBS, ruta crítica, asignación de recursos</p>
                       </div>
                       <div className="bg-white/5 rounded-lg p-2 border border-white/5">
-                        <div className="text-white/80 font-semibold text-[9px] sm:text-xs">Project Libre</div>
-                        <p className="text-white/40 text-[7px] sm:text-[9px]">Cronograma WBS, ruta crítica, asignación de recursos, seguimiento</p>
+                        <div className="text-white/80 font-semibold text-[9px] sm:text-xs">GitHub / Git</div>
+                        <p className="text-white/40 text-[7px] sm:text-[9px]">Control de versiones, code review, CI/CD con Vercel, trabajo colaborativo</p>
                       </div>
                       <div className="bg-white/5 rounded-lg p-2 border border-white/5">
-                        <div className="text-white/80 font-semibold text-[9px] sm:text-xs">Git / GitHub</div>
-                        <p className="text-white/40 text-[7px] sm:text-[9px]">Control de versiones, trabajo colaborativo, code review, CI/CD</p>
+                        <div className="text-white/80 font-semibold text-[9px] sm:text-xs">Google Meet / Discord</div>
+                        <p className="text-white/40 text-[7px] sm:text-[9px]">Reuniones semanales de coordinación, daily syncs, revisiones de sprint</p>
                       </div>
                       <div className="bg-white/5 rounded-lg p-2 border border-white/5">
                         <div className="text-white/80 font-semibold text-[9px] sm:text-xs">Sala de Proyectos</div>
@@ -910,8 +992,115 @@ export default function Presentacion() {
               </SlideIn>
             </section>}
 
-            {/* ══════════ SLIDE 6 — INDICADOR 6 (20%) ══════════ */}
-            {slide === 6 && <section className="w-full max-w-5xl">
+            {/* ══════════ SLIDE 6 — TECNOLOGÍAS ══════════ */}
+            {slide === 6 && <section className="w-full max-w-6xl">
+              <div className="text-center mb-3">
+                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', stiffness: 200, damping: 12 }}
+                  className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 rounded-full bg-teal-500/20 flex items-center justify-center"
+                >
+                  <Monitor className="w-6 h-6 sm:w-8 sm:h-8 text-teal-300" />
+                </motion.div>
+                <h2 className="text-xl sm:text-3xl font-black text-white">Tecnologías del Proyecto</h2>
+                <p className="text-white/50 text-[10px] sm:text-sm mt-1">Stack técnico · Arquitectura · Justificación de cada tecnología</p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 max-w-6xl mx-auto">
+                <SlideIn delay={0.1}>
+                  <div className="bg-cyan-500/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-cyan-500/20 h-full">
+                    <div className="flex items-center gap-1.5 mb-2"><Monitor className="w-4 h-4 text-cyan-300" /><span className="text-cyan-300 font-bold text-xs">Frontend</span></div>
+                    <p className="text-white/80 font-semibold text-[9px] sm:text-xs">React 18 + Vite</p>
+                    <p className="text-white/40 text-[7px] sm:text-[9px] leading-relaxed mt-1">SPA moderna con hot reload, Tailwind CSS 3 para estilos rápidos y responsivos, Framer Motion para animaciones fluidas.</p>
+                    <p className="text-emerald-300/70 text-[7px] sm:text-[9px] mt-1 italic">¿Por qué? Mejor DX del mercado, build ultrarrápido, ecosistema maduro.</p>
+                  </div>
+                </SlideIn>
+                <SlideIn delay={0.15}>
+                  <div className="bg-cyan-500/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-cyan-500/20 h-full">
+                    <div className="flex items-center gap-1.5 mb-2"><Cloud className="w-4 h-4 text-cyan-300" /><span className="text-cyan-300 font-bold text-xs">Backend</span></div>
+                    <p className="text-white/80 font-semibold text-[9px] sm:text-xs">Express 5 + Node.js 20</p>
+                    <p className="text-white/40 text-[7px] sm:text-[9px] leading-relaxed mt-1">API REST con manejo asíncrono, handler nativo de Vercel (sin serverless-http).</p>
+                    <p className="text-emerald-300/70 text-[7px] sm:text-[9px] mt-1 italic">¿Por qué? Express 5 funciona como handler serverless directo en Vercel, Node 20 LTS con soporte largo.</p>
+                  </div>
+                </SlideIn>
+                <SlideIn delay={0.2}>
+                  <div className="bg-cyan-500/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-cyan-500/20 h-full">
+                    <div className="flex items-center gap-1.5 mb-2"><Database className="w-4 h-4 text-cyan-300" /><span className="text-cyan-300 font-bold text-xs">Base de Datos</span></div>
+                    <p className="text-white/80 font-semibold text-[9px] sm:text-xs">PostgreSQL 16 + Neon</p>
+                    <p className="text-white/40 text-[7px] sm:text-[9px] leading-relaxed mt-1">BD serverless en la nube con pool asíncrono, helpers all/get/run, consultas parametrizadas.</p>
+                    <p className="text-emerald-300/70 text-[7px] sm:text-[9px] mt-1 italic">¿Por qué? BD gestionada gratuita, alta disponibilidad, sin operaciones de servidor.</p>
+                  </div>
+                </SlideIn>
+                <SlideIn delay={0.25}>
+                  <div className="bg-cyan-500/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-cyan-500/20 h-full">
+                    <div className="flex items-center gap-1.5 mb-2"><GitFork className="w-4 h-4 text-cyan-300" /><span className="text-cyan-300 font-bold text-xs">DevOps</span></div>
+                    <p className="text-white/80 font-semibold text-[9px] sm:text-xs">Git + GitHub + Vercel</p>
+                    <p className="text-white/40 text-[7px] sm:text-[9px] leading-relaxed mt-1">Control de versiones, CI/CD integrado, despliegue continuo automático desde master.</p>
+                    <p className="text-emerald-300/70 text-[7px] sm:text-[9px] mt-1 italic">¿Por qué? CI/CD sin configuración, cada push despliega en producción automáticamente.</p>
+                  </div>
+                </SlideIn>
+              </div>
+
+              <SlideIn delay={0.3}>
+                <div className="mt-2 bg-gradient-to-br from-teal-900/20 to-cyan-900/20 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-teal-500/20 max-w-4xl mx-auto">
+                  <p className="text-teal-300/80 text-[8px] sm:text-[10px]"><Target className="w-3 h-3 inline mr-0.5" /> Stack completo: React 18 / Vite + Tailwind CSS + Framer Motion → Express 5 + Node.js 20 → PostgreSQL 16 (Neon) → Vercel (despliegue). Tecnologías probadas, maduras y con amplia comunidad — minimizan riesgos técnicos y permiten entregar valor rápido.</p>
+                </div>
+              </SlideIn>
+            </section>}
+
+            {/* ══════════ SLIDE 7 — MITIGACIÓN DE RIESGOS ══════════ */}
+            {slide === 7 && <section className="w-full max-w-6xl">
+              <div className="text-center mb-3">
+                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', stiffness: 200, damping: 12 }}
+                  className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 rounded-full bg-red-500/20 flex items-center justify-center"
+                >
+                  <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-red-300" />
+                </motion.div>
+                <h2 className="text-xl sm:text-3xl font-black text-white">Mitigación de Riesgos del Proyecto</h2>
+                <p className="text-white/50 text-[10px] sm:text-sm mt-1">4 riesgos identificados · Estrategias de mitigación · Impacto en la selección de alternativas</p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-w-6xl mx-auto">
+                <SlideIn delay={0.1}>
+                  <div className="bg-rose-500/10 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-rose-500/20 h-full">
+                    <div className="flex items-center gap-1.5 mb-1"><Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-rose-300" /><span className="text-rose-300 font-bold text-[10px] sm:text-xs">Riesgo 1: Sobreestimación de Ingresos</span></div>
+                    <p className="text-white/40 text-[7px] sm:text-[9px] leading-relaxed mb-1"><span className="text-rose-200/70">Identificación:</span> Se asumió 30% de conversión a plan Premium, sobreestimando ingresos B2C.</p>
+                    <p className="text-white/60 text-[7px] sm:text-[9px] leading-relaxed"><span className="text-emerald-300/70">Mitigación:</span> Investigación de benchmarks SaaS reales (OpenView 2024, SaaS Capital 2024) — tasa real 15-20%. Ajuste conservador al 10%. VAN bajó de $480M a $306M pero sigue siendo positivo. Modelo defendible ante inversionistas.</p>
+                  </div>
+                </SlideIn>
+
+                <SlideIn delay={0.15}>
+                  <div className="bg-rose-500/10 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-rose-500/20 h-full">
+                    <div className="flex items-center gap-1.5 mb-1"><Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-rose-300" /><span className="text-rose-300 font-bold text-[10px] sm:text-xs">Riesgo 2: Arquitectura Técnica Compleja</span></div>
+                    <p className="text-white/40 text-[7px] sm:text-[9px] leading-relaxed mb-1"><span className="text-rose-200/70">Identificación:</span> Opción 2 (Cascada Total) requería microservicios, IA avanzada, 18+ meses de desarrollo con 12+ roles.</p>
+                    <p className="text-white/60 text-[7px] sm:text-[9px] leading-relaxed"><span className="text-emerald-300/70">Mitigación:</span> Selección de Opción 1 (MVP Ágil PRO) con entregas quincenales — validación temprana, tecnología probada (React/Express/PostgreSQL), equipo de 5 roles, inversión controlada de $46.56M en RRHH.</p>
+                  </div>
+                </SlideIn>
+
+                <SlideIn delay={0.2}>
+                  <div className="bg-rose-500/10 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-rose-500/20 h-full">
+                    <div className="flex items-center gap-1.5 mb-1"><Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-rose-300" /><span className="text-rose-300 font-bold text-[10px] sm:text-xs">Riesgo 3: Incumplimiento Normativo</span></div>
+                    <p className="text-white/40 text-[7px] sm:text-[9px] leading-relaxed mb-1"><span className="text-rose-200/70">Identificación:</span> Opción 3 (SaaS Híbrido) almacenaba datos en servidores de terceros sin control sobre cumplimiento Ley 19.628 de Privacidad de Datos ni Propiedad Intelectual.</p>
+                    <p className="text-white/60 text-[7px] sm:text-[9px] leading-relaxed"><span className="text-emerald-300/70">Mitigación:</span> Opción 3 descartada por incumplimiento normativo (puntaje 5/15 en privacidad y 5/15 en PI). Opciones 1 y 2 cumplen con GDPR-by-design y desarrollo propio (15/15 en ambos criterios).</p>
+                  </div>
+                </SlideIn>
+
+                <SlideIn delay={0.25}>
+                  <div className="bg-rose-500/10 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-rose-500/20 h-full">
+                    <div className="flex items-center gap-1.5 mb-1"><Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-rose-300" /><span className="text-rose-300 font-bold text-[10px] sm:text-xs">Riesgo 4: Capacidad de Pago Insuficiente</span></div>
+                    <p className="text-white/40 text-[7px] sm:text-[9px] leading-relaxed mb-1"><span className="text-rose-200/70">Identificación:</span> Préstamo de $50M al 12% anual requiere evaluación rigurosa de capacidad de pago por parte del CFO.</p>
+                    <p className="text-white/60 text-[7px] sm:text-[9px] leading-relaxed"><span className="text-emerald-300/70">Mitigación:</span> 4 ratios calculados: Liquidez 6.7 meses (cubre desarrollo), Cobertura Intereses 5.6x (&gt;2.5x mínimo), Capacidad Pago 117% (holgura 17%), Apalancamiento 8:1 (favorable porque TIR 178.2% &gt;&gt; 12% de interés).</p>
+                  </div>
+                </SlideIn>
+              </div>
+
+              <SlideIn delay={0.3}>
+                <div className="mt-2 bg-gradient-to-br from-emerald-900/20 to-teal-900/20 backdrop-blur-sm rounded-xl p-2 sm:p-2.5 border border-emerald-500/20 text-center max-w-3xl mx-auto">
+                  <p className="text-emerald-300/80 text-[8px] sm:text-[10px]"><Target className="w-3 h-3 inline mr-0.5" /> Conclusión: Los 4 riesgos fueron mitigados exitosamente — la Opción 1 (MVP Ágil PRO) es la única alternativa que minimiza todos los riesgos simultáneamente: financiero (VAN positivo, capacidad pago 117%), técnico (MVP+entregas quincenales), normativo (GDPR-by-design) y operativo (equipo factible de 5 roles).</p>
+                </div>
+              </SlideIn>
+            </section>}
+
+            {/* ══════════ SLIDE 8 — INDICADOR 6 (20%) ══════════ */}
+            {slide === 8 && <section className="w-full max-w-5xl">
               <div className="flex items-center gap-2 mb-3 justify-center">
                 <button onClick={() => setRubricData(rubricAnswers.pregunta3)} type="button" className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity active:scale-95 focus-visible:ring-2 focus-visible:ring-white/50 rounded-lg px-2 py-1" title="Click para respuesta fundamentada">
                   <TrendingUp className="w-5 h-5 sm:w-7 sm:h-7 text-violet-300" />
@@ -969,8 +1158,8 @@ export default function Presentacion() {
               </SlideIn>
             </section>}
 
-            {/* ══════════ SLIDE 7 — INDICADOR 7 (15%) ══════════ */}
-            {slide === 7 && <section className="max-w-4xl mx-auto w-full">
+            {/* ══════════ SLIDE 9 — INDICADOR 7 (15%) ══════════ */}
+            {slide === 9 && <section className="max-w-4xl mx-auto w-full">
               <div className="flex items-center gap-2 mb-3 justify-center">
                 <button onClick={() => setRubricData(rubricAnswers.pregunta4)} type="button" className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity active:scale-95 focus-visible:ring-2 focus-visible:ring-white/50 rounded-lg px-2 py-1" title="Click para respuesta fundamentada">
                   <Lightbulb className="w-5 h-5 sm:w-7 sm:h-7 text-teal-300" />
@@ -1029,8 +1218,8 @@ export default function Presentacion() {
               </SlideIn>
             </section>}
 
-            {/* ══════════ SLIDE 8 — GRACIAS ══════════ */}
-            {slide === 8 && <section className="text-center">
+            {/* ══════════ SLIDE 10 — GRACIAS ══════════ */}
+            {slide === 10 && <section className="text-center">
               <Confetti />
               <SlideIn delay={0}>
                 <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}
