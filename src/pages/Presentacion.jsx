@@ -12,9 +12,11 @@ const slides = [
   { id: 'p2-justificacion', gradient: 'from-blue-900 via-cyan-800 to-sky-900 dark:from-blue-950 dark:via-cyan-900 dark:to-sky-950', icon: BarChart3 },
   { id: 'p-metodos',    gradient: 'from-purple-900 via-violet-800 to-indigo-900 dark:from-purple-950 dark:via-violet-900 dark:to-indigo-950', icon: BookOpen },
   { id: 'p-tecnologias', gradient: 'from-teal-900 via-cyan-800 to-blue-900 dark:from-teal-950 dark:via-cyan-900 dark:to-blue-950', icon: Monitor },
+  { id: 'p-legal',      gradient: 'from-indigo-900 via-blue-800 to-sky-900 dark:from-indigo-950 dark:via-blue-900 dark:to-sky-950', icon: Scale },
   { id: 'p-riesgos',    gradient: 'from-red-900 via-rose-800 to-pink-900 dark:from-red-950 dark:via-rose-900 dark:to-pink-950', icon: Shield },
   { id: 'p3-resultados',    gradient: 'from-violet-900 via-purple-800 to-fuchsia-900 dark:from-violet-950 dark:via-purple-900 dark:to-fuchsia-950', icon: TrendingUp },
   { id: 'p4-reflexion',     gradient: 'from-cyan-900 via-teal-800 to-emerald-900 dark:from-cyan-950 dark:via-teal-900 dark:to-emerald-950', icon: Lightbulb },
+  { id: 'p-impacto',    gradient: 'from-pink-900 via-rose-800 to-red-900 dark:from-pink-950 dark:via-rose-900 dark:to-red-950', icon: Heart },
   { id: 'gracias',    gradient: 'from-pink-900 via-rose-800 to-red-900 dark:from-pink-950 dark:via-rose-900 dark:to-red-950', icon: Heart },
 ]
 
@@ -79,6 +81,24 @@ RESPUESTA (1 min):
 • Metodología: Ágil (Scrum) con entregas quincenales, planificación en Jira y reuniones semanales por Google Meet.
 
 ¿Por qué estas tecnologías? React + Vite da la mejor experiencia de desarrollo con hot reload rápido. Express 5 es compatible con serverless de Vercel. PostgreSQL en Neon ofrece BD gestionada gratuita con alta disponibilidad. Elegimos tecnologías probadas y maduras para minimizar riesgos técnicos y entregar rápido."`,
+  'p-legal': `MARCO LEGAL APLICABLE — Ley Cholito y Protección de Datos Personales.
+
+RESPUESTA (1.5 min):
+"Patitas Conectadas cumple con 2 marcos legales chilenos fundamentales:
+
+1. LEY CHOLITO (Ley 21.020 — Tenencia Responsable de Mascotas):
+   Promulgada en 2017, establece la responsabilidad de los dueños por el bienestar y control de sus mascotas.
+   Nuestro proyecto se alinea directamente: el registro obligatorio de mascotas (microchip) que exige la ley es la base de nuestro sistema de matching. La plataforma complementa la ley al facilitar que dueños reporten mascotas perdidas y recuperen las que tienen microchip registrado.
+   Cumplimiento: la App registra datos del animal con el número de microchip como campo obligatorio, permitiendo a municipalidades y clínicas veterinarias verificar tenencia responsable.
+
+2. LEY DE PROTECCIÓN DE DATOS PERSONALES (Ley 19.628):
+   Regula el tratamiento de datos personales en Chile. Aplica a datos de dueños, mascotas, clínicas y municipios.
+   Cumplimiento en el proyecto:
+   • Datos mínimos necesarios: solo recopilamos nombre, teléfono, email, ubicación y datos de la mascota — nada superfluo.
+   • Consentimiento: el registro requiere aceptación expresa de términos y condiciones.
+   • Seguridad: BD en PostgreSQL con consultas parametrizadas (SQL injection prevention), autenticación por roles (Owner, Admin, Veterinarian).
+   • Titularidad: desarrollo propio (Opción 1) — los datos no salen de nuestra infraestructura controlada.
+   • En la matriz multicriterio, privacidad de datos obtuvo 15/15 para Opciones 1 y 2 por desarrollo propio con GDPR-by-design."`,
   'p-riesgos': `MITIGACIÓN DE RIESGOS — Soporte complementario a Indicadores 4, 5 y 6.
 
 RESPUESTA (1.5 min):
@@ -121,7 +141,18 @@ DIFICULTAD: Sobreestimación inicial de ingresos (30% conversión Premium). La s
 
 LECCIONES: La viabilidad técnica es inútil sin flujo de caja saludable. Aprendí a evaluar inversiones en tecnología con criterio económico, no solo técnico."`,
 
-  gracias: 'Cierre. "En resumen: VAN +$305.9M, TIR 178.2%, PRI 20.1 meses. Proyecto VIABLE y ALTAMENTE RENTABLE. Todos los indicadores de la rúbrica se cumplen y superan expectativas. Gracias."'
+  gracias: 'Cierre. "En resumen: VAN +$305.9M, TIR 178.2%, PRI 20.1 meses. Proyecto VIABLE y ALTAMENTE RENTABLE. Todos los indicadores de la rúbrica se cumplen y superan expectativas. Gracias."',
+
+  'p-impacto': `IMPACTO SOCIAL Y HUMANO — Cierre emocional de la presentación.
+
+RESPUESTA (1 min):
+"Patitas Conectadas no es solo un proyecto de software con indicadores financieros positivos. Detrás de cada número hay una historia real: el 85% de las mascotas perdidas en Chile nunca regresan a casa. Son más de 10.000 familias al año que pierden a un miembro más de su familia sin saber dónde buscarlo.
+
+Nuestra plataforma existe para cambiar esa realidad. Con matching por foto usando IA, geoalertas a vecinos cercanos y una red de apoyo integrada con clínicas veterinarias, municipios y refugios, podemos subir la tasa de reencuentro del 15% al 60%+.
+
+Cada vez que alguien encuentra a su mascota gracias a Patitas Conectadas, no es una transacción — es una familia reunida. Ese es el verdadero impacto que medimos. El software es el medio, pero el fin es humano.
+
+Esto es lo que hace que este proyecto sea especial: no solo es viable financieramente, sino que transforma vidas."`,
 }
 
 /* ── Animated counter ── */
@@ -313,6 +344,14 @@ const qaData = [
   {
     q: 'Tecnologías del Proyecto: ¿Qué stack tecnológico se utilizó y por qué se eligieron esas tecnologías?',
     a: 'Stack completo: React 18 + Vite (frontend SPA con hot reload y Tailwind CSS 3), Express 5 + Node.js 20 (API REST serverless compatible con Vercel), PostgreSQL 16 en Neon (BD gestionada serverless con pool asíncrono), Git + GitHub + Vercel (CI/CD integrado con despliegue automático desde master). ¿Por qué? React + Vite da la mejor DX con HMR ultrarrápido. Express 5 funciona como handler nativo de Vercel sin serverless-http. PostgreSQL en Neon ofrece BD robusta sin operaciones de servidor. Todas son tecnologías probadas, maduras y con amplia comunidad — minimizan riesgos técnicos y permiten entregar el MVP en 6 meses con equipo de 5 roles.'
+  },
+  {
+    q: 'Marco Legal: ¿Qué leyes regulan el proyecto y cómo se cumple con ellas? ¿Cómo impactaron en la selección de la alternativa?',
+    a: 'Dos marcos legales: (1) Ley Cholito (Ley 21.020 — Tenencia Responsable de Mascotas): regula microchip obligatorio y registro nacional. Patitas Conectadas complementa la ley: la App registra mascotas con microchip, permite reportar pérdidas y facilita reencuentros. Municipalidades y clínicas verifican tenencia responsable desde la plataforma. (2) Ley de Protección de Datos (Ley 19.628): regula el tratamiento de datos personales. Nuestro cumplimiento incluye: datos mínimos necesarios, consentimiento expreso en registro, consultas parametrizadas (SQL injection prevention), autenticación por roles (Owner/Admin/Vet), y desarrollo propio (Opción 1) — datos nunca salen de infraestructura controlada. En la matriz multicriterio, Privacidad de Datos (15%) obtuvo 15/15 en Opciones 1 y 2, pero solo 5/15 en Opción 3 (SaaS), lo que contribuyó a descartarla.'
+  },
+  {
+    q: 'Impacto Social: ¿Cuál es el impacto real del proyecto en las personas? ¿Por qué es importante más allá de los números?',
+    a: 'Patitas Conectadas busca resolver un problema profundamente humano: el 85% de las mascotas perdidas en Chile nunca regresan a casa — más de 10.000 familias al año. Nuestra plataforma sube la tasa de reencuentro del 15% al 60%+ usando matching por foto con IA, geoalertas a vecinos y red de apoyo con clínicas, municipios y refugios. Detrás de cada indicador financiero hay una historia real: una familia que recupera a su mascota. El proyecto no solo es viable financieramente (VAN +$306M, TIR 178.2%), sino que transforma vidas. Cada reencuentro no es una transacción — es una familia reunida. Ese es el verdadero impacto que buscamos.'
   }
 ]
 
@@ -514,6 +553,49 @@ JUSTIFICACIÓN DE CADA TECNOLOGÍA:
 4. Git + GitHub + Vercel: CI/CD integrado sin configuración — cada push a master despliega automáticamente en producción. GitHub ofrece code review y trabajo colaborativo. Beneficio: despliegue continuo sin operaciones DevOps dedicadas.
 
 CONCLUSIÓN: El stack completo (React → Express → PostgreSQL → Vercel) usa tecnologías probadas, maduras y con amplia comunidad. Esto minimiza riesgos técnicos, acelera el desarrollo y permite entregar valor en 6 meses con equipo reducido de 5 roles.`
+  },
+  pregunta9: {
+    title: 'Marco Legal — Ley Cholito y Protección de Datos',
+    subtitle: '¿Qué marcos legales aplican al proyecto y cómo se cumple con ellos? ¿Cómo impactaron en la selección de la alternativa?',
+    answer: `Respuesta fundamentada — Marco Legal:
+
+PATITAS CONECTADAS CUMPLE CON 2 MARCOS LEGALES CHILENOS:
+
+1. LEY CHOLITO (Ley 21.020 — Tenencia Responsable de Mascotas, 2017):
+   Objetivo: Establecer responsabilidades de los dueños por el bienestar y control de sus mascotas, exigiendo registro con microchip y esterilización.
+   Cómo cumplimos: La plataforma se alinea directamente con la ley — el registro de mascotas incluye número de microchip como campo obligatorio, permitiendo a municipalidades y clínicas veterinarias verificar tenencia responsable. Patitas Conectadas no reemplaza la ley, la complementa: digitaliza el proceso de reencuentro usando el microchip como identificador único.
+   Impacto: La App fortalece el cumplimiento de la Ley Cholito al facilitar que dueños reporten pérdidas y recuperen mascotas más rápido.
+
+2. LEY DE PROTECCIÓN DE DATOS PERSONALES (Ley 19.628, 1999):
+   Objetivo: Regular el tratamiento de datos personales — consentimiento, finalidad, seguridad y derechos ARCO (Acceso, Rectificación, Cancelación, Oposición).
+   Cómo cumplimos:
+   - Principio de minimización: solo recopilamos nombre, teléfono, email, ubicación y datos de la mascota.
+   - Consentimiento expreso: el registro exige aceptar términos y condiciones.
+   - Seguridad técnica: consultas parametrizadas en PostgreSQL (protección SQL injection), autenticación por roles (Owner, Admin, Veterinarian).
+   - Titularidad: desarrollo propio (Opción 1) — los datos no salen de nuestra infraestructura controlada.
+
+   IMPACTO EN LA SELECCIÓN DE ALTERNATIVA:
+   En la matriz multicriterio, la Dimensión Normativa (30%) evaluó Privacidad de Datos (15%) y Propiedad Intelectual (15%). Opciones 1 y 2 obtuvieron 15/15 en ambos por desarrollo propio con GDPR-by-design. Opción 3 (SaaS Híbrido) obtuvo solo 5/15 en cada uno por almacenar datos en servidores de terceros sin control sobre cumplimiento normativo — esto fue determinante para descartarla.`
+  },
+  pregunta10: {
+    title: 'Impacto Social — Más que un Proyecto de Software',
+    subtitle: '¿Cuál es el impacto real del proyecto en las personas? ¿Por qué es importante más allá de los indicadores financieros?',
+    answer: `Respuesta fundamentada — Impacto Social y Humano:
+
+EL PROBLEMA REAL:
+En Chile, el 85% de las mascotas perdidas nunca regresan a casa. Esto significa más de 10.000 familias al año que pierden a un miembro de su familia — una mascota no es una posesión, es un ser querido — sin tener un canal centralizado para encontrarlo.
+
+LA SOLUCIÓN QUE CAMBIA VIDAS:
+Patitas Conectadas existe para cambiar esa realidad a través de:
+• Matching por foto con IA (Sharp.js + distancia euclidiana RGB, 85%+ precisión): un dueño sube una foto y el sistema encuentra coincidencias automáticamente.
+• Geoalertas a vecinos cercanos: cuando una mascota se pierde, notificamos a usuarios en un radio de 5 km.
+• Red de apoyo integrada: clínicas veterinarias, municipios y refugios colaboran en la búsqueda.
+• Tasa de reencuentro proyectada: del 15% actual al 60%+ — 4 veces más familias reunidas.
+
+EL VERDADERO IMPACTO:
+Detrás de cada indicador financiero (VAN +$306M, TIR 178.2%) hay una historia real. Cada vez que alguien encuentra a su mascota gracias a Patitas Conectadas, no es una transacción — es una familia reunida. El software es el medio, pero el fin es humano.
+
+Esto es lo que hace que este proyecto sea especial: no solo cumple con todos los indicadores de la rúbrica y es viable financieramente, sino que transforma vidas. Es un negocio rentable con un propósito social genuino.`
   }
 }
 
@@ -523,9 +605,11 @@ const rubricSlideMap = {
   4: rubricAnswers.pregunta2,
   5: rubricAnswers.pregunta6,
   6: rubricAnswers.pregunta8,
-  7: rubricAnswers.pregunta7,
-  8: rubricAnswers.pregunta3,
-  9: rubricAnswers.pregunta4,
+  7: rubricAnswers.pregunta9,
+  8: rubricAnswers.pregunta7,
+  9: rubricAnswers.pregunta3,
+  10: rubricAnswers.pregunta4,
+  11: rubricAnswers.pregunta10,
 }
 
 /* ── Main component ── */
@@ -1046,8 +1130,58 @@ export default function Presentacion() {
               </SlideIn>
             </section>}
 
-            {/* ══════════ SLIDE 7 — MITIGACIÓN DE RIESGOS ══════════ */}
+            {/* ══════════ SLIDE 7 — MARCO LEGAL ══════════ */}
             {slide === 7 && <section className="w-full max-w-6xl">
+              <div className="text-center mb-3">
+                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', stiffness: 200, damping: 12 }}
+                  className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 rounded-full bg-indigo-500/20 flex items-center justify-center"
+                >
+                  <Scale className="w-6 h-6 sm:w-8 sm:h-8 text-indigo-300" />
+                </motion.div>
+                <h2 className="text-xl sm:text-3xl font-black text-white">Marco Legal Aplicable</h2>
+                <p className="text-white/50 text-[10px] sm:text-sm mt-1">Ley Cholito (21.020) · Protección de Datos (19.628) · Cómo cumplimos</p>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 max-w-6xl mx-auto">
+                <SlideIn delay={0.1}>
+                  <div className="bg-blue-500/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-blue-500/20 h-full">
+                    <div className="flex items-center gap-1.5 mb-2"><Scale className="w-4 h-4 text-blue-300" /><span className="text-blue-300 font-bold text-xs">Ley Cholito (Ley 21.020)</span></div>
+                    <p className="text-white/40 text-[7px] sm:text-[9px] leading-relaxed mb-1.5"><span className="text-white/70 font-semibold">¿Qué regula?</span> Tenencia responsable de mascotas — microchip obligatorio, registro nacional, responsabilidad del dueño por bienestar animal.</p>
+                    <p className="text-emerald-300/70 text-[7px] sm:text-[9px] font-semibold mb-1">✓ Nuestro cumplimiento:</p>
+                    <ul className="text-white/50 text-[7px] sm:text-[9px] leading-relaxed list-disc list-inside space-y-0.5">
+                      <li>Registro de mascotas con número de microchip como campo obligatorio</li>
+                      <li>Plataforma complementa la ley: dueños reportan pérdidas y recuperan mascotas con microchip</li>
+                      <li>Municipalidades y clínicas verifican tenencia responsable desde la App</li>
+                      <li>Matching por IA + geolocalización reduce tiempo de reencuentro</li>
+                    </ul>
+                  </div>
+                </SlideIn>
+
+                <SlideIn delay={0.15}>
+                  <div className="bg-indigo-500/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-indigo-500/20 h-full">
+                    <div className="flex items-center gap-1.5 mb-2"><Shield className="w-4 h-4 text-indigo-300" /><span className="text-indigo-300 font-bold text-xs">Protección de Datos (Ley 19.628)</span></div>
+                    <p className="text-white/40 text-[7px] sm:text-[9px] leading-relaxed mb-1.5"><span className="text-white/70 font-semibold">¿Qué regula?</span> Tratamiento de datos personales en Chile — consentimiento, finalidad, seguridad y derechos del titular.</p>
+                    <p className="text-emerald-300/70 text-[7px] sm:text-[9px] font-semibold mb-1">✓ Nuestro cumplimiento:</p>
+                    <ul className="text-white/50 text-[7px] sm:text-[9px] leading-relaxed list-disc list-inside space-y-0.5">
+                      <li>Datos mínimos necesarios: solo nombre, teléfono, email, ubicación y datos de la mascota</li>
+                      <li>Consentimiento expreso: registro requiere aceptar términos y condiciones</li>
+                      <li>Consultas parametrizadas (SQL injection prevention) en PostgreSQL</li>
+                      <li>Autenticación por roles: Owner, Admin, Veterinarian</li>
+                      <li>Desarrollo propio (Opción 1): datos nunca salen de infraestructura controlada</li>
+                    </ul>
+                  </div>
+                </SlideIn>
+              </div>
+
+              <SlideIn delay={0.2}>
+                <div className="mt-2 bg-gradient-to-br from-indigo-900/20 to-sky-900/20 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-indigo-500/20 max-w-4xl mx-auto">
+                  <p className="text-indigo-300/80 text-[8px] sm:text-[10px]"><CheckCircle className="w-3 h-3 inline mr-0.5" /> En la matriz multicriterio, Privacidad de Datos (15%) y Propiedad Intelectual (15%) obtuvieron 15/15 para Opciones 1 y 2 por desarrollo propio con GDPR-by-design. La Opción 3 (SaaS) fue descartada por incumplir Ley 19.628 con solo 5/15. Ley Cholito no se ponderó directamente pero nuestro proyecto la complementa y fortalece.</p>
+                </div>
+              </SlideIn>
+            </section>}
+
+            {/* ══════════ SLIDE 8 — MITIGACIÓN DE RIESGOS ══════════ */}
+            {slide === 8 && <section className="w-full max-w-6xl">
               <div className="text-center mb-3">
                 <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', stiffness: 200, damping: 12 }}
                   className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 rounded-full bg-red-500/20 flex items-center justify-center"
@@ -1099,8 +1233,8 @@ export default function Presentacion() {
               </SlideIn>
             </section>}
 
-            {/* ══════════ SLIDE 8 — INDICADOR 6 (20%) ══════════ */}
-            {slide === 8 && <section className="w-full max-w-5xl">
+            {/* ══════════ SLIDE 9 — INDICADOR 6 (20%) ══════════ */}
+            {slide === 9 && <section className="w-full max-w-5xl">
               <div className="flex items-center gap-2 mb-3 justify-center">
                 <button onClick={() => setRubricData(rubricAnswers.pregunta3)} type="button" className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity active:scale-95 focus-visible:ring-2 focus-visible:ring-white/50 rounded-lg px-2 py-1" title="Click para respuesta fundamentada">
                   <TrendingUp className="w-5 h-5 sm:w-7 sm:h-7 text-violet-300" />
@@ -1158,8 +1292,8 @@ export default function Presentacion() {
               </SlideIn>
             </section>}
 
-            {/* ══════════ SLIDE 9 — INDICADOR 7 (15%) ══════════ */}
-            {slide === 9 && <section className="max-w-4xl mx-auto w-full">
+            {/* ══════════ SLIDE 10 — INDICADOR 7 (15%) ══════════ */}
+            {slide === 10 && <section className="max-w-4xl mx-auto w-full">
               <div className="flex items-center gap-2 mb-3 justify-center">
                 <button onClick={() => setRubricData(rubricAnswers.pregunta4)} type="button" className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity active:scale-95 focus-visible:ring-2 focus-visible:ring-white/50 rounded-lg px-2 py-1" title="Click para respuesta fundamentada">
                   <Lightbulb className="w-5 h-5 sm:w-7 sm:h-7 text-teal-300" />
@@ -1218,8 +1352,56 @@ export default function Presentacion() {
               </SlideIn>
             </section>}
 
-            {/* ══════════ SLIDE 10 — GRACIAS ══════════ */}
-            {slide === 10 && <section className="text-center">
+            {/* ══════════ SLIDE 11 — IMPACTO SOCIAL ══════════ */}
+            {slide === 11 && <section className="w-full max-w-5xl">
+              <div className="text-center mb-3 sm:mb-4">
+                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', stiffness: 200, damping: 12 }}
+                  className="w-14 h-14 sm:w-20 sm:h-20 mx-auto mb-2 rounded-full bg-pink-500/20 flex items-center justify-center"
+                >
+                  <Heart className="w-7 h-7 sm:w-10 sm:h-10 text-pink-300" fill="#f9a8d4" />
+                </motion.div>
+                <h2 className="text-2xl sm:text-4xl font-black text-white">Más que un Proyecto de Software</h2>
+                <p className="text-white/50 text-xs sm:text-sm mt-1">10,000+ familias al año · 85% nunca reencuentran · Podemos cambiarlo</p>
+              </div>
+
+              <div className="max-w-4xl mx-auto space-y-2 sm:space-y-3">
+                <SlideIn delay={0.1}>
+                  <div className="bg-gradient-to-r from-pink-500/10 via-rose-500/10 to-red-500/10 backdrop-blur-sm rounded-xl p-3 sm:p-5 border border-pink-500/20">
+                    <p className="text-white/80 text-xs sm:text-sm leading-relaxed text-center">
+                      <span className="text-pink-300 font-semibold">Detrás de cada número hay una historia real.</span> El 85% de las mascotas perdidas en Chile nunca regresan a casa. Son más de <span className="text-rose-200 font-bold">10.000 familias al año</span> que pierden a un miembro de su familia sin saber dónde buscarlo.
+                    </p>
+                  </div>
+                </SlideIn>
+
+                <SlideIn delay={0.15}>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-white/10 text-center">
+                      <div className="text-pink-300 font-black text-lg sm:text-2xl">15%</div>
+                      <p className="text-white/50 text-[9px] sm:text-xs">Tasa actual de reencuentro</p>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-white/10 text-center">
+                      <div className="text-emerald-300 font-black text-lg sm:text-2xl">60%+</div>
+                      <p className="text-white/50 text-[9px] sm:text-xs">Tasa proyectada con Patitas</p>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-white/10 text-center">
+                      <div className="text-amber-300 font-black text-lg sm:text-2xl">4x</div>
+                      <p className="text-white/50 text-[9px] sm:text-xs">Más familias reunidas</p>
+                    </div>
+                  </div>
+                </SlideIn>
+
+                <SlideIn delay={0.2}>
+                  <div className="bg-gradient-to-br from-rose-900/20 to-pink-900/20 backdrop-blur-sm rounded-xl p-3 sm:p-5 border border-rose-500/20">
+                    <p className="text-white/70 text-xs sm:text-sm leading-relaxed text-center italic">
+                      "Cada vez que alguien encuentra a su mascota gracias a Patitas Conectadas, no es una transacción — <span className="text-pink-200 font-semibold">es una familia reunida</span>. El software es el medio, pero el fin es humano. Esto es lo que hace que este proyecto sea especial: no solo es viable financieramente, sino que <span className="text-emerald-200 font-semibold">transforma vidas</span>."
+                    </p>
+                  </div>
+                </SlideIn>
+              </div>
+            </section>}
+
+            {/* ══════════ SLIDE 12 — GRACIAS ══════════ */}
+            {slide === 12 && <section className="text-center">
               <Confetti />
               <SlideIn delay={0}>
                 <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}
