@@ -18,6 +18,9 @@ const slides = [
   { id: 'p-financiero', gradient: 'from-emerald-900 via-teal-800 to-green-900 dark:from-emerald-950 dark:via-teal-900 dark:to-green-950', icon: DollarSign },
   { id: 'p4-reflexion',     gradient: 'from-cyan-900 via-teal-800 to-emerald-900 dark:from-cyan-950 dark:via-teal-900 dark:to-emerald-950', icon: Lightbulb },
   { id: 'p-impacto',    gradient: 'from-pink-900 via-rose-800 to-red-900 dark:from-pink-950 dark:via-rose-900 dark:to-red-950', icon: Heart },
+  { id: 'p-estrategico',  gradient: 'from-yellow-900 via-amber-800 to-orange-900 dark:from-yellow-950 dark:via-amber-900 dark:to-orange-950', icon: Target },
+  { id: 'p-metodologico', gradient: 'from-sky-900 via-blue-800 to-indigo-900 dark:from-sky-950 dark:via-blue-900 dark:to-indigo-950', icon: ClipboardList },
+  { id: 'p-costos',       gradient: 'from-orange-900 via-amber-800 to-yellow-900 dark:from-orange-950 dark:via-amber-900 dark:to-yellow-950', icon: DollarSign },
   { id: 'gracias',    gradient: 'from-pink-900 via-rose-800 to-red-900 dark:from-pink-950 dark:via-rose-900 dark:to-red-950', icon: Heart },
 ]
 
@@ -164,6 +167,57 @@ Nuestra plataforma existe para cambiar esa realidad. Con matching por foto usand
 Cada vez que alguien encuentra a su mascota gracias a Patitas Conectadas, no es una transacción — es una familia reunida. Ese es el verdadero impacto que medimos. El software es el medio, pero el fin es humano.
 
 Esto es lo que hace que este proyecto sea especial: no solo es viable financieramente, sino que transforma vidas."`,
+  'p-estrategico': `OBJETIVO ESTRATÉGICO — Alineación del proyecto con la visión de la organización.
+
+RESPUESTA (1 min):
+"El objetivo estratégico de Patitas Conectadas es reducir la tasa de mascotas no reencontradas en Chile del 85% al 40% en 3 años, mediante una plataforma digital centralizada que integre a dueños, clínicas veterinarias, municipalidades y refugios en un solo ecosistema.
+
+Nuestra visión: ser la plataforma líder de reencuentro de mascotas en Latinoamérica, donde cada mascota perdida tenga una red activa buscándola.
+
+Los objetivos específicos son: (1) MVP operativo en 6 meses con matching IA y geoalertas; (2) Cobertura en 5 regiones al año 1 y nacional al año 3; (3) Red de 100+ clínicas y 20+ municipios aliados; (4) Sostenibilidad financiera vía modelo Freemium + B2B con VAN positivo y TIR atractiva.
+
+Este proyecto no es solo un desarrollo de software — es una solución a un problema social con un modelo de negocio viable."`,
+  'p-metodologico': `MARCO METODOLÓGICO DE DECISIÓN — Proceso estructurado para seleccionar la mejor alternativa.
+
+RESPUESTA (1.5 min):
+"Nuestro marco metodológico siguió 5 etapas:
+
+1. IDENTIFICACIÓN DE ALTERNATIVAS: Definimos 3 opciones viables — Op1: Desarrollo Incremental Ágil (MVP PRO), Op2: Cascada Total, Op3: SaaS Híbrido. Cada una con diferente nivel de inversión, riesgo y tiempo de implementación.
+
+2. DEFINICIÓN DE CRITERIOS: Establecimos 6 criterios en 3 dimensiones con pesos según prioridades estratégicas — Técnicos (40%: Funcionalidad Core 20%, Integración 20%), Administrativos (30%: Capacidad Equipo 15%, Viabilidad Financiera 15%), Normativos (30%: Privacidad Datos 15%, Propiedad Intelectual 15%).
+
+3. RECOLECCIÓN DE DATOS: Para cada criterio, recopilamos información de fuentes verificables: requerimientos del CTO (criterios técnicos), del CFO (criterios financieros) y marco legal chileno (criterios normativos).
+
+4. EVALUACIÓN: Aplicamos la Matriz Multicriterio Ponderada con puntuación 0-20 por criterio. Complementamos con VAN/TIR/PRI para viabilidad económica, Capacidad Financiera (4 ratios), Benchmark SaaS y análisis de riesgos.
+
+5. SELECCIÓN: Opción 1 (MVP Ágil PRO) obtuvo 85% — la mejor relación costo-beneficio-riesgo-tiempo. Opción 2 (80%) descartada por VAN negativo. Opción 3 (63%) descartada por incumplimiento normativo."`,
+  'p-costos': `FUGAS OPERATIVAS Y COMPARACIÓN DE COSTOS — Eficiencia operativa de cada alternativa.
+
+RESPUESTA (1.5 min):
+"Comparamos los costos operativos de las 3 opciones para identificar fugas y elegir la más eficiente:
+
+OPCIÓN 1 — MVP ÁGIL PRO (SELECCIONADA):
+• Inversión RRHH Fase 1: $46.56M (5 roles × 6 meses)
+• Costo operación mensual Fase 2: $3.88M (4 roles)
+• Infraestructura cloud (Neon + Vercel): ~$200K/mes
+• Total 36 meses: ~$256M (RRHH + hosting + amortización)
+• Relación costo/ingreso: 38% — cada $1 gastado genera $2.62
+
+OPCIÓN 2 — CASCADA TOTAL (DESCARTADA):
+• Inversión RRHH: $180M+ (12 roles × 18 meses)
+• Costo operación mensual: $8.5M (6 roles)
+• Infraestructura compleja (microservicios): $1.5M/mes
+• Total 36 meses: ~$480M
+• VAN negativo — los costos superan los ingresos
+
+OPCIÓN 3 — SAAS HÍBRIDO (DESCARTADA):
+• Inversión inicial: $70M (personal + integración)
+• Licencias SaaS: $800K/mes (suscripción perpetua)
+• Costo operación: $3.2M/mes
+• Total 36 meses: ~$320M
+• VAN bajo y sin control sobre datos críticos
+
+CONCLUSIÓN: La Opción 1 es la más eficiente — 47% menos costo total que Opción 2 y 20% menos que Opción 3, con la ventaja adicional de desarrollo propio y control total."`,
 }
 
 /* ── Animated counter ── */
@@ -367,6 +421,18 @@ const qaData = [
   {
     q: 'Desglose VAN/TIR/PRI: ¿Cómo se calcularon estos indicadores? ¿Qué significa cada uno y por qué son importantes para el proyecto?',
     a: 'VAN (Valor Actual Neto): Suma de flujos futuros descontados al 12% anual (0.949% mensual) menos inversión inicial. Fórmula: VAN = Σ(FCt/(1+i)^t) - I₀. Resultado: +$305.9M > $0 — crea valor sobre tasa exigida. TIR (Tasa Interna de Retorno): Tasa que hace VAN = 0, calculada por iteración probando tasas hasta encontrar la que da VAN ≈ 0. Resultado: 178.2% >> 12% — 14.8x superior al costo del préstamo. PRI (Período de Recuperación): Mes donde flujo descontado acumulado iguala la inversión, calculado por interpolación entre mes negativo y positivo. Resultado: 20.1 meses < 36 meses — recuperación antes del plazo del préstamo. Los 3 indicadores son positivos y superan exigencias del CFO — el proyecto es financieramente sólido.'
+  },
+  {
+    q: 'Objetivo Estratégico: ¿Cuál es el objetivo estratégico del proyecto? ¿Cuál es la visión y los objetivos específicos?',
+    a: 'Objetivo estratégico general: Reducir la tasa de mascotas no reencontradas en Chile del 85% al 40% en 3 años, mediante una plataforma digital centralizada que integre a dueños, clínicas, municipalidades y refugios. Visión: Ser la plataforma líder de reencuentro de mascotas en Latinoamérica. Objetivos específicos: (1) MVP operativo en 6 meses con matching IA y geoalertas; (2) Cobertura en 5 regiones al año 1 y nacional al año 3; (3) Red de 100+ clínicas y 20+ municipios aliados; (4) Sostenibilidad financiera vía modelo Freemium + B2B con VAN +$306M y TIR 178.2%.'
+  },
+  {
+    q: 'Marco Metodológico: ¿Cuál fue el proceso de decisión para seleccionar la mejor alternativa? ¿Qué etapas se siguieron?',
+    a: 'Seguimos 5 etapas: (1) Identificar alternativas — 3 opciones (MVP Ágil PRO, Cascada Total, SaaS Híbrido). (2) Definir criterios — 6 criterios en 3 dimensiones: Técnicos 40%, Administrativos 30%, Normativos 30%. (3) Recolectar datos — fuentes verificables: CTO (técnicos), CFO (financieros), marco legal (normativos). (4) Evaluar — Matriz Multicriterio Ponderada + VAN/TIR/PRI + Capacidad Financiera + Benchmark SaaS + Riesgos. (5) Seleccionar — Op1 (85%) ganó por mejor equilibrio técnico-financiero-normativo. Op2 (80%) descartada por VAN negativo. Op3 (63%) descartada por incumplir Ley 19.628.'
+  },
+  {
+    q: 'Costos Operativos: ¿Cómo se comparan los costos entre las 3 opciones? ¿Cuál es la más eficiente y por qué?',
+    a: 'Op1 (MVP Ágil PRO): $256M total 36 meses, relación costo/ingreso 38%, cada $1 gastado genera $2.62. Op2 (Cascada Total): $480M total — 47% más cara que Op1, VAN negativo por costos excesivos (12 roles, 18 meses desarrollo, microservicios). Op3 (SaaS Híbrido): $320M total — 20% más cara que Op1, además sin control sobre datos críticos (incumple Ley 19.628). Conclusión: Op1 es la más eficiente por su menor inversión inicial (MVP en 6 meses con 5 roles), infraestructura cloud liviana (Vercel + Neon) y la mejor relación costo/ingreso.'
   }
 ]
 
@@ -640,6 +706,96 @@ Esto es lo que hace que este proyecto sea especial: no solo cumple con todos los
    Interpretación: PRI 20.1m < 36m (plazo del préstamo). La inversión se recupera antes de que venza la deuda, liberando flujo para reinversión o pago anticipado.
 
 CONCLUSIÓN: Los 3 indicadores son positivos y superan ampliamente las exigencias del CFO. El proyecto es financieramente sólido, rentable y de bajo riesgo.`
+  },
+  pregunta12: {
+    title: 'Objetivo Estratégico',
+    subtitle: '¿Cuál es el objetivo estratégico del proyecto? ¿Visión, misión y objetivos específicos?',
+    answer: `Respuesta fundamentada — Objetivo Estratégico:
+
+OBJETIVO ESTRATÉGICO GENERAL:
+Reducir la tasa de mascotas no reencontradas en Chile del 85% al 40% en 3 años, mediante una plataforma digital centralizada que integre a dueños, clínicas veterinarias, municipalidades y refugios en un solo ecosistema.
+
+VISIÓN:
+Ser la plataforma líder de reencuentro de mascotas en Latinoamérica, donde cada mascota perdida tenga una red activa buscándola.
+
+OBJETIVOS ESPECÍFICOS:
+1. MVP operativo en 6 meses con matching por IA (Sharp.js + distancia euclidiana RGB) y geoalertas por coordenadas con 85%+ precisión.
+2. Cobertura en 5 regiones al año 1, expansión a cobertura nacional al año 3, mediante acuerdos con municipalidades.
+3. Red de 100+ clínicas veterinarias aliadas y 20+ municipios que usen la plataforma para verificar tenencia responsable (Ley Cholito).
+4. Sostenibilidad financiera probada: modelo Freemium (10% conversión a $3.000/mes) + B2B (clínicas $100K, municipios $300K, refugios $60K anual), con VAN +$306M y TIR 178.2%.
+
+Este proyecto no es solo un desarrollo de software — es una solución a un problema social chileno con un modelo de negocio viable y escalable.`
+  },
+  pregunta13: {
+    title: 'Marco Metodológico de Decisión',
+    subtitle: '¿Cuál fue el proceso estructurado para seleccionar la mejor alternativa de desarrollo?',
+    answer: `Respuesta fundamentada — Marco Metodológico de Decisión:
+
+Nuestro marco de decisión siguió 5 etapas secuenciales:
+
+ETAPA 1 — IDENTIFICACIÓN DE ALTERNATIVAS:
+Definimos 3 opciones viables basadas en el estado del arte del desarrollo de software:
+· Op1: Desarrollo Incremental Ágil (MVP PRO) — 6 meses, 5 roles, tecnología probada.
+· Op2: Cascada Total — 18+ meses, 12+ roles, microservicios + IA avanzada.
+· Op3: SaaS Híbrido — 10 meses, 8 roles, dependencia de proveedor externo.
+
+ETAPA 2 — DEFINICIÓN DE CRITERIOS:
+Establecimos 6 criterios ponderados en 3 dimensiones estratégicas:
+· Técnicos (40%): Funcionalidad Core 20% + Integración Sistemas 20% — prioridad del CTO.
+· Administrativos (30%): Capacidad del Equipo 15% + Viabilidad Financiera 15% — prioridad del CFO.
+· Normativos (30%): Privacidad de Datos 15% + Propiedad Intelectual 15% — marco legal chileno.
+
+ETAPA 3 — RECOLECCIÓN DE DATOS:
+Para cada criterio, recopilamos datos de fuentes verificables:
+· Requerimientos del CTO para criterios técnicos (funcionalidades core, integraciones).
+· Requerimientos del CFO para criterios administrativos (presupuesto, equipo disponible).
+· Ley 19.628 de Protección de Datos y Ley 21.020 (Ley Cholito) para criterios normativos.
+· Benchmarks de la industria SaaS (OpenView 2024, SaaS Capital 2024) para validar supuestos.
+
+ETAPA 4 — EVALUACIÓN INTEGRAL:
+Aplicamos múltiples métodos complementarios:
+· Matriz Multicriterio Ponderada: puntuación 0-20 por criterio × 3 alternativas.
+· Análisis Financiero: VAN/TIR/PRI con flujo de caja descontado al 12% anual.
+· Capacidad Financiera: 4 ratios (Liquidez, Cobertura, Capacidad Pago, Apalancamiento).
+· Benchmark SaaS: comparación con industria.
+· Análisis de Riesgos: 4 riesgos identificados y mitigados.
+
+ETAPA 5 — SELECCIÓN FINAL:
+· Op1 (MVP Ágil PRO): 85% ✅ — Mejor equilibrio técnico-financiero-normativo.
+· Op2 (Cascada Total): 80% ⚠️ — VAN negativo, riesgo alto por equipo insuficiente.
+· Op3 (SaaS Híbrido): 63% ❌ — Incumplimiento normativo (Ley 19.628).
+
+CONCLUSIÓN: Este marco garantiza una decisión objetiva, reproducible y defendible ante cualquier directorio. Cada alternativa fue evaluada con los mismos criterios, pesos y fuentes de información.`
+  },
+  pregunta14: {
+    title: 'Análisis Comparativo de Costos',
+    subtitle: '¿Cómo se comparan los costos operativos entre las 3 opciones? ¿Cuál es la más eficiente?',
+    answer: `Respuesta fundamentada — Comparación de Costos:
+
+OPCIÓN 1 — MVP ÁGIL PRO (SELECCIONADA):
+· Inversión RRHH Fase 1 (6 meses): $46.56M — 5 roles (PO, Backend, Mobile, UX, QA)
+· Costo operación mensual Fase 2: $3.88M — 4 roles (Backend, Mobile, DevOps, Soporte)
+· Infraestructura cloud: ~$200K/mes (Neon PostgreSQL + Vercel)
+· Total 36 meses: ~$256M (RRHH + hosting + intereses + amortización)
+· Relación costo/ingreso: 38% — cada $1 gastado genera $2.62 de retorno
+· VENTAJA: Desarrollo propio, control total, infraestructura liviana, equipo mínimo viable
+
+OPCIÓN 2 — CASCADA TOTAL (DESCARTADA):
+· Inversión RRHH (18 meses): $180M+ — 12 roles especializados
+· Costo operación mensual: $8.5M — 6 roles en producción
+· Infraestructura: $1.5M/mes — microservicios, servidores dedicados
+· Total 36 meses: ~$480M — 87% más caro que Op1
+· VAN negativo — los costos operativos superan los ingresos proyectados
+· FUGA: Equipo sobredimensionado para el problema real, sobreingeniería
+
+OPCIÓN 3 — SAAS HÍBRIDO (DESCARTADA):
+· Inversión inicial: $70M — personal + integración con plataforma SaaS
+· Licencias SaaS: $800K/mes — suscripción perpetua al proveedor
+· Costo operación: $3.2M/mes — equipo reducido de mantención
+· Total 36 meses: ~$320M — 25% más caro que Op1
+· Sin control sobre datos críticos — incumple Ley 19.628
+
+CONCLUSIÓN: Op1 es la más eficiente por 3 razones: (1) 47% menos costo total que Op2, (2) 20% menos que Op3, (3) desarrollo propio con control total de datos y la mejor relación costo/ingreso (38%). La "fuga operativa" de Op2 es el sobredimensionamiento del equipo y la sobreingeniería; la de Op3 son las licencias SaaS perpetuas sin control sobre los datos.`
   }
 }
 
@@ -655,6 +811,9 @@ const rubricSlideMap = {
   10: rubricAnswers.pregunta11,
   11: rubricAnswers.pregunta4,
   12: rubricAnswers.pregunta10,
+  13: rubricAnswers.pregunta12,
+  14: rubricAnswers.pregunta13,
+  15: rubricAnswers.pregunta14,
 }
 
 /* ── Main component ── */
@@ -1502,8 +1661,144 @@ export default function Presentacion() {
               </div>
             </section>}
 
-            {/* ══════════ SLIDE 13 — GRACIAS ══════════ */}
-            {slide === 13 && <section className="text-center">
+            {/* ══════════ SLIDE 13 — OBJETIVO ESTRATÉGICO ══════════ */}
+            {slide === 13 && <section className="w-full max-w-5xl">
+              <div className="text-center mb-3">
+                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', stiffness: 200, damping: 12 }}
+                  className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 rounded-full bg-amber-500/20 flex items-center justify-center"
+                >
+                  <Target className="w-6 h-6 sm:w-8 sm:h-8 text-amber-300" />
+                </motion.div>
+                <h2 className="text-xl sm:text-3xl font-black text-white">Objetivo Estratégico</h2>
+                <p className="text-white/50 text-[10px] sm:text-sm mt-1">Visión · Misión · Objetivos específicos · Alineación organizacional</p>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 max-w-5xl mx-auto">
+                <SlideIn delay={0.1}>
+                  <div className="bg-amber-500/10 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-amber-500/20 h-full">
+                    <div className="flex items-center gap-1.5 mb-1.5"><Target className="w-4 h-4 text-amber-300" /><span className="text-amber-300 font-bold text-xs">Objetivo Estratégico General</span></div>
+                    <p className="text-white/70 text-[8px] sm:text-[10px] leading-relaxed">Reducir la tasa de mascotas no reencontradas en Chile del <span className="text-red-300 font-bold">85% al 40%</span> en 3 años, mediante una plataforma digital centralizada que integre a dueños, clínicas veterinarias, municipalidades y refugios en un solo ecosistema.</p>
+                  </div>
+                </SlideIn>
+                <SlideIn delay={0.15}>
+                  <div className="bg-amber-500/10 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-amber-500/20 h-full">
+                    <div className="flex items-center gap-1.5 mb-1.5"><Star className="w-4 h-4 text-amber-300" /><span className="text-amber-300 font-bold text-xs">Visión</span></div>
+                    <p className="text-white/70 text-[8px] sm:text-[10px] leading-relaxed italic">Ser la plataforma líder de reencuentro de mascotas en Latinoamérica, donde cada mascota perdida tenga una red activa buscándola.</p>
+                  </div>
+                </SlideIn>
+              </div>
+
+              <SlideIn delay={0.2}>
+                <div className="mt-2 bg-gradient-to-br from-amber-900/20 to-yellow-900/20 backdrop-blur-sm rounded-xl p-2 sm:p-2.5 border border-amber-500/20">
+                  <p className="text-amber-300/80 text-[7px] sm:text-[9px] uppercase tracking-wider text-center font-bold mb-1.5">Objetivos Específicos</p>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
+                    <div className="bg-white/10 rounded-lg p-1.5 text-center"><div className="text-emerald-300 font-bold text-[9px] sm:text-xs">6 meses</div><p className="text-white/50 text-[6px] sm:text-[8px]">MVP operativo con matching IA + geoalertas</p></div>
+                    <div className="bg-white/10 rounded-lg p-1.5 text-center"><div className="text-emerald-300 font-bold text-[9px] sm:text-xs">5 regiones</div><p className="text-white/50 text-[6px] sm:text-[8px]">Cobertura año 1 → nacional año 3</p></div>
+                    <div className="bg-white/10 rounded-lg p-1.5 text-center"><div className="text-emerald-300 font-bold text-[9px] sm:text-xs">100+</div><p className="text-white/50 text-[6px] sm:text-[8px]">Clínicas veterinarias aliadas</p></div>
+                    <div className="bg-white/10 rounded-lg p-1.5 text-center"><div className="text-emerald-300 font-bold text-[9px] sm:text-xs">VAN +$306M</div><p className="text-white/50 text-[6px] sm:text-[8px]">Sostenibilidad financiera probada</p></div>
+                  </div>
+                </div>
+              </SlideIn>
+            </section>}
+
+            {/* ══════════ SLIDE 14 — MARCO METODOLÓGICO ══════════ */}
+            {slide === 14 && <section className="w-full max-w-6xl">
+              <div className="text-center mb-3">
+                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', stiffness: 200, damping: 12 }}
+                  className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 rounded-full bg-blue-500/20 flex items-center justify-center"
+                >
+                  <ClipboardList className="w-6 h-6 sm:w-8 sm:h-8 text-blue-300" />
+                </motion.div>
+                <h2 className="text-xl sm:text-3xl font-black text-white">Marco Metodológico de Decisión</h2>
+                <p className="text-white/50 text-[10px] sm:text-sm mt-1">5 etapas · 3 alternativas · 6 criterios · Evaluación multicriterio + financiera + riesgo</p>
+              </div>
+
+              <div className="space-y-1.5 max-w-6xl mx-auto">
+                <SlideIn delay={0.1}>
+                  <div className="grid grid-cols-5 gap-1.5 sm:gap-2">
+                    {[
+                      { step: '1', title: 'Identificar Alternativas', desc: 'Op1: MVP Ágil PRO\nOp2: Cascada Total\nOp3: SaaS Híbrido', color: 'bg-blue-500/20 border-blue-500/30 text-blue-300' },
+                      { step: '2', title: 'Definir Criterios', desc: '6 criterios en 3 dimensiones\nTécnicos 40%\nAdministrativos 30%\nNormativos 30%', color: 'bg-indigo-500/20 border-indigo-500/30 text-indigo-300' },
+                      { step: '3', title: 'Recolectar Datos', desc: 'Fuentes verificables:\nCTO (criterios técnicos)\nCFO (financieros)\nMarco legal (normativos)', color: 'bg-purple-500/20 border-purple-500/30 text-purple-300' },
+                      { step: '4', title: 'Evaluar', desc: 'Matriz Multicriterio\nVAN/TIR/PRI\nCapacidad Financiera\nBenchmark SaaS\nRiesgos', color: 'bg-violet-500/20 border-violet-500/30 text-violet-300' },
+                      { step: '5', title: 'Seleccionar', desc: 'Op1: 85% ✅\nOp2: 80% ⚠️\nOp3: 63% ❌\n→ Opción 1 seleccionada', color: 'bg-emerald-500/20 border-emerald-500/30 text-emerald-300' },
+                    ].map((s, i) => (
+                      <div key={i} className={`${s.color} backdrop-blur-sm rounded-xl p-1.5 sm:p-2 border text-center`}>
+                        <div className="text-xs sm:text-sm font-black mb-0.5">{s.step}</div>
+                        <div className="text-[8px] sm:text-[10px] font-bold mb-0.5">{s.title}</div>
+                        <p className="text-white/50 text-[6px] sm:text-[8px] whitespace-pre-line leading-tight">{s.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </SlideIn>
+                <SlideIn delay={0.15}>
+                  <div className="bg-gradient-to-br from-blue-900/20 to-indigo-900/20 backdrop-blur-sm rounded-xl p-2 sm:p-2.5 border border-blue-500/20 max-w-4xl mx-auto">
+                    <p className="text-blue-300/80 text-[8px] sm:text-[10px]"><Target className="w-3 h-3 inline mr-0.5" /> Este marco garantiza una decisión objetiva, reproducible y defendible ante el directorio — cada alternativa fue evaluada con los mismos criterios, pesos y fuentes de información.</p>
+                  </div>
+                </SlideIn>
+              </div>
+            </section>}
+
+            {/* ══════════ SLIDE 15 — FUGAS OPERATIVAS Y COSTOS ══════════ */}
+            {slide === 15 && <section className="w-full max-w-6xl">
+              <div className="text-center mb-3">
+                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', stiffness: 200, damping: 12 }}
+                  className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 rounded-full bg-orange-500/20 flex items-center justify-center"
+                >
+                  <DollarSign className="w-6 h-6 sm:w-8 sm:h-8 text-orange-300" />
+                </motion.div>
+                <h2 className="text-xl sm:text-3xl font-black text-white">Análisis Comparativo de Costos</h2>
+                <p className="text-white/50 text-[10px] sm:text-sm mt-1">Fugas operativas · Costos totales 36 meses · Relación costo/ingreso por opción</p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 max-w-6xl mx-auto">
+                <SlideIn delay={0.1}>
+                  <div className="bg-emerald-500/10 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-emerald-500/20 h-full">
+                    <div className="flex items-center gap-1.5 mb-1.5"><CheckCircle className="w-3.5 h-3.5 text-emerald-300" /><span className="text-emerald-300 font-bold text-[10px] sm:text-xs">Op1: MVP Ágil PRO ✅</span></div>
+                    <div className="space-y-1">
+                      <div className="bg-white/10 rounded-lg p-1"><div className="flex justify-between text-[7px] sm:text-[9px]"><span className="text-white/60">Inversión RRHH Fase 1</span><span className="text-white/90 font-semibold">$46.56M</span></div></div>
+                      <div className="bg-white/10 rounded-lg p-1"><div className="flex justify-between text-[7px] sm:text-[9px]"><span className="text-white/60">Operación mensual Fase 2</span><span className="text-white/90 font-semibold">$3.88M</span></div></div>
+                      <div className="bg-white/10 rounded-lg p-1"><div className="flex justify-between text-[7px] sm:text-[9px]"><span className="text-white/60">Infraestructura cloud</span><span className="text-white/90 font-semibold">~$200K/mes</span></div></div>
+                      <div className="bg-emerald-500/10 rounded-lg p-1 mt-1"><div className="flex justify-between text-[7px] sm:text-[9px]"><span className="text-emerald-200">Total 36 meses</span><span className="text-emerald-200 font-bold">~$256M</span></div></div>
+                      <div className="bg-emerald-500/10 rounded-lg p-1"><div className="flex justify-between text-[7px] sm:text-[9px]"><span className="text-emerald-200">Costo/Ingreso</span><span className="text-emerald-200 font-bold">38%</span></div></div>
+                    </div>
+                  </div>
+                </SlideIn>
+                <SlideIn delay={0.15}>
+                  <div className="bg-rose-500/10 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-rose-500/20 h-full">
+                    <div className="flex items-center gap-1.5 mb-1.5"><X className="w-3.5 h-3.5 text-rose-300" /><span className="text-rose-300 font-bold text-[10px] sm:text-xs">Op2: Cascada Total ❌</span></div>
+                    <div className="space-y-1">
+                      <div className="bg-white/10 rounded-lg p-1"><div className="flex justify-between text-[7px] sm:text-[9px]"><span className="text-white/60">Inversión RRHH 18m</span><span className="text-white/90 font-semibold">$180M+</span></div></div>
+                      <div className="bg-white/10 rounded-lg p-1"><div className="flex justify-between text-[7px] sm:text-[9px]"><span className="text-white/60">Operación mensual</span><span className="text-white/90 font-semibold">$8.5M</span></div></div>
+                      <div className="bg-white/10 rounded-lg p-1"><div className="flex justify-between text-[7px] sm:text-[9px]"><span className="text-white/60">Infraestructura</span><span className="text-white/90 font-semibold">$1.5M/mes</span></div></div>
+                      <div className="bg-rose-500/10 rounded-lg p-1 mt-1"><div className="flex justify-between text-[7px] sm:text-[9px]"><span className="text-rose-200">Total 36 meses</span><span className="text-rose-200 font-bold">~$480M</span></div></div>
+                      <div className="bg-rose-500/10 rounded-lg p-1"><div className="flex justify-between text-[7px] sm:text-[9px]"><span className="text-rose-200">VAN</span><span className="text-rose-200 font-bold">Negativo ☠️</span></div></div>
+                    </div>
+                  </div>
+                </SlideIn>
+                <SlideIn delay={0.2}>
+                  <div className="bg-rose-500/10 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-rose-500/20 h-full">
+                    <div className="flex items-center gap-1.5 mb-1.5"><X className="w-3.5 h-3.5 text-rose-300" /><span className="text-rose-300 font-bold text-[10px] sm:text-xs">Op3: SaaS Híbrido ❌</span></div>
+                    <div className="space-y-1">
+                      <div className="bg-white/10 rounded-lg p-1"><div className="flex justify-between text-[7px] sm:text-[9px]"><span className="text-white/60">Inversión inicial</span><span className="text-white/90 font-semibold">$70M</span></div></div>
+                      <div className="bg-white/10 rounded-lg p-1"><div className="flex justify-between text-[7px] sm:text-[9px]"><span className="text-white/60">Licencias SaaS</span><span className="text-white/90 font-semibold">$800K/mes</span></div></div>
+                      <div className="bg-white/10 rounded-lg p-1"><div className="flex justify-between text-[7px] sm:text-[9px]"><span className="text-white/60">Operación mensual</span><span className="text-white/90 font-semibold">$3.2M</span></div></div>
+                      <div className="bg-rose-500/10 rounded-lg p-1 mt-1"><div className="flex justify-between text-[7px] sm:text-[9px]"><span className="text-rose-200">Total 36 meses</span><span className="text-rose-200 font-bold">~$320M</span></div></div>
+                      <div className="bg-rose-500/10 rounded-lg p-1"><div className="flex justify-between text-[7px] sm:text-[9px]"><span className="text-rose-200">Control datos</span><span className="text-rose-200 font-bold">Sin control ❌</span></div></div>
+                    </div>
+                  </div>
+                </SlideIn>
+              </div>
+
+              <SlideIn delay={0.25}>
+                <div className="mt-2 bg-gradient-to-br from-orange-900/20 to-amber-900/20 backdrop-blur-sm rounded-xl p-2 sm:p-2.5 border border-orange-500/20 max-w-4xl mx-auto">
+                  <p className="text-orange-300/80 text-[8px] sm:text-[10px]"><CheckCircle className="w-3 h-3 inline mr-0.5" /> Op1 es la más eficiente: 47% menos costo total que Op2 y 20% menos que Op3, con desarrollo propio, control total de datos y la mejor relación costo/ingreso (38%).</p>
+                </div>
+              </SlideIn>
+            </section>}
+
+            {/* ══════════ SLIDE 16 — GRACIAS ══════════ */}
+            {slide === 16 && <section className="text-center">
               <Confetti />
               <SlideIn delay={0}>
                 <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}
