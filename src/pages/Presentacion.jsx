@@ -272,6 +272,14 @@ const qaData = [
   {
     q: 'Indicador 7 (15%): Explique de forma reflexiva su aporte individual al trabajo realizado, ¿Cuáles son sus fortalezas, dificultades y lecciones aprendidas en esta etapa?',
     a: 'APORTE: Lideré el modelamiento financiero completo — flujo de caja (2 fases × 36 meses), tabla de amortización (Sistema Francés), VAN, TIR, PRI, estructura de inversión ($50M préstamo + $6.24M capital), y proyección de ingresos Freemium + B2B. FORTALEZAS: Capacidad analítica para traducir requerimientos de software en variables cuantitativas financieras. Rigor metodológico. Visión integral conectando decisiones técnicas con impacto financiero. DIFICULTAD: Sobreestimación inicial de ingresos (asumí 30% conversión Premium). La superé investigando benchmarks SaaS reales (15-20%) y ajustando al 10% conservador. LECCIONES: La viabilidad técnica es inútil sin flujo de caja saludable. Aprendí a evaluar inversiones en tecnología con criterio económico, no solo técnico.'
+  },
+  {
+    q: 'Evaluación Multicriterio: ¿Cómo se aplicó la matriz de decisión ponderada? ¿Qué criterios se evaluaron y cómo se llegó a la selección de la Opción 1?',
+    a: 'Construimos una matriz con 3 alternativas × 6 criterios en 3 dimensiones. Técnicos (40%): Funcionalidad Core (20%) e Integración Sistemas (20%) — ponderados según requerimientos del CTO. Administrativos (30%): Capacidad del Equipo (15%) y Viabilidad Financiera (15%) — según requerimientos del CFO. Normativos (30%): Privacidad de Datos (15%) y Propiedad Intelectual (15%) — según marco legal chileno (Ley 19.628). Cada criterio se puntuó de 0 a 20 con fuentes verificables. Resultado: Opción 1 (MVP Ágil PRO) 85% — Factible. Opción 2 (Cascada Total) 80% — Riesgo alto por VAN negativo. Opción 3 (SaaS Híbrido) 63% — Deficiente por incumplimiento normativo (privacidad y PI). La Opción 1 fue seleccionada por su equilibrio: puntuación máxima en capacidad equipo, viabilidad financiera y normativo completo.'
+  },
+  {
+    q: 'Herramientas y Métodos: ¿Qué herramientas colaborativas y métodos de análisis se utilizaron para justificar la elección del proyecto?',
+    a: 'Herramientas colaborativas: Ofimática 365 (documentación compartida y tablas dinámicas), Project Libre (cronograma WBS con ruta crítica y asignación de recursos), Git/GitHub (control de versiones con trabajo colaborativo en código y code review), Vercel (despliegue continuo CI/CD), Neon PostgreSQL (base de datos en la nube), y Sala de Proyectos (pizarra para planning semanal, TV para sprint reviews). Métodos de análisis: (1) Matriz Multicriterio Ponderada — 6 criterios × 3 alternativas con puntuación 0-20; (2) VAN/TIR/PRI — flujo de caja descontado al 12% anual; (3) Capacidad Financiera — 4 ratios (liquidez 6.7m, cobertura 5.6x, pago 117%, apalancamiento 8:1); (4) Benchmark SaaS — comparación con industria (OpenView, SaaS Capital 2024). Mitigación de errores: ajuste de ingresos por benchmarks reales (30%→10%), riesgo técnico cubierto con MVP+entregas quincenales, riesgo normativo evaluado con marco legal, y riesgo financiero con TIR 178.2% >> 12%.'
   }
 ]
 
@@ -378,12 +386,62 @@ La viabilidad técnica de un software es inútil si no tiene un flujo de caja sa
 
 CONTRIBUCIÓN A MI FORMACIÓN:
 Este proyecto me preparó para tomar decisiones de inversión en tecnología con criterio económico, no solo técnico. Hoy puedo evaluar si un proyecto de software es viable, calcular su retorno, y argumentar con datos. Es una habilidad crítica para líderes de proyectos de software.`
+  },
+  pregunta5: {
+    title: 'Evaluación Multicriterio — Matriz de Decisión Ponderada',
+    subtitle: '¿Cómo se aplicó la matriz multicriterio para seleccionar la opción de desarrollo? ¿Qué criterios, pesos y fuentes se utilizaron?',
+    answer: `Respuesta fundamentada — Matriz Multicriterio:
+
+DISEÑO DE LA MATRIZ:
+Construimos una matriz de decisión con 3 alternativas (Opción 1: MVP Ágil PRO, Opción 2: Cascada Total, Opción 3: SaaS Híbrido) evaluadas en 6 criterios agrupados en 3 dimensiones, con pesos asignados según prioridades estratégicas.
+
+DIMENSIÓN TÉCNICA (40% — Requerimientos del CTO):
+1. Funcionalidad Core (20%): Capacidad de cumplir requerimientos funcionales del proyecto. Op1: 15/20 (MVP cubre lo esencial), Op2: 20/20 (completo pero lento), Op3: 18/20 (buen balance).
+2. Integración Sistemas (20%): Facilidad de integración con sistemas existentes. Op1: 10/20 (integraciones básicas), Op2: 20/20 (arquitectura completa), Op3: 15/20 (moderada).
+
+DIMENSIÓN ADMINISTRATIVA (30% — Requerimientos del CFO):
+3. Capacidad del Equipo (15%): Equipo disponible vs. requerido. Op1: 15/15 (5 roles cubiertos), Op2: 5/15 (requiere 12+ roles), Op3: 10/15 (requiere 8 roles).
+4. Viabilidad Financiera (15%): VAN, TIR, PRI positivos. Op1: 15/15 (VAN +$306M), Op2: 5/15 (VAN negativo), Op3: 10/15 (VAN bajo).
+
+DIMENSIÓN NORMATIVA (30% — Marco Legal Chileno):
+5. Privacidad de Datos (15%): Cumplimiento Ley 19.628. Op1: 15/15 (GDPR-by-design), Op2: 15/15 (completo), Op3: 5/15 (datos en terceros sin control).
+6. Propiedad Intelectual (15%): Titularidad del código. Op1: 15/15 (desarrollo propio), Op2: 15/15 (propio), Op3: 5/15 (dependencia del proveedor SaaS).
+
+RESULTADO: Op1: 85% ✅ FACTIBLE | Op2: 80% ⚠️ RIESGO ALTO | Op3: 63% ❌ DEFICIENTE
+CONCLUSIÓN: Opción 1 seleccionada por equilibrio entre viabilidad técnica, financiera y normativa.`
+  },
+  pregunta6: {
+    title: 'Herramientas Colaborativas y Métodos de Análisis',
+    subtitle: '¿Qué herramientas y métodos se utilizaron para el análisis y justificación del proyecto? ¿Cómo se mitigaron los errores?',
+    answer: `Respuesta fundamentada — Herramientas y Métodos:
+
+HERRAMIENTAS COLABORATIVAS:
+1. Ofimática 365: Documentación compartida en tiempo real, tablas dinámicas para flujo de caja, informes colaborativos.
+2. Project Libre: Cronograma con WBS (Work Breakdown Structure), ruta crítica, asignación de recursos por rol y seguimiento de hitos.
+3. Git/GitHub: Control de versiones distribuido, trabajo colaborativo en código (branches, pull requests, code review), CI/CD integrado.
+4. Vercel: Despliegue continuo automático desde GitHub — cada push a master despliega en producción.
+5. Neon (PostgreSQL): Base de datos en la nube con pool asíncrono, migraciones y seed data.
+6. Sala de Proyectos: Pizarra para planning semanal con equipo, TV para revisiones de sprint y demo al docente.
+
+MÉTODOS DE ANÁLISIS:
+1. Matriz Multicriterio Ponderada: 6 criterios × 3 alternativas con puntuación 0-20 y fuentes verificables (CTO, CFO, marco legal).
+2. VAN/TIR/PRI: Flujo de caja mensual a 36 meses, descontado al 12% anual (0.949% mensual). VAN por suma de flujos descontados, TIR por iteración, PRI por interpolación lineal.
+3. Capacidad Financiera: 4 ratios — Liquidez (Runway 6.7 meses), Cobertura Intereses (5.6x), Capacidad Pago (117%), Apalancamiento (8:1).
+4. Benchmark SaaS: Comparación con industria (OpenView 2024, SaaS Capital 2024) — TIR 4.5x superior, Margen Neto 3x superior.
+
+MITIGACIÓN DE ERRORES:
+· Sobreestimación ingresos: Benchmarks reales → ajuste conservador 10%.
+· Riesgo técnico: MVP + entregas quincenales → validación temprana.
+· Riesgo normativo: Evaluación PDP + PI → opción 3 descartada.
+· Riesgo financiero: TIR 178.2% >> 12%, capacidad pago 117% → holgura 17%.`
   }
 }
 
 const rubricSlideMap = {
+  2: rubricAnswers.pregunta5,
   3: rubricAnswers.pregunta1,
   4: rubricAnswers.pregunta2,
+  5: rubricAnswers.pregunta6,
   6: rubricAnswers.pregunta3,
   7: rubricAnswers.pregunta4,
 }
