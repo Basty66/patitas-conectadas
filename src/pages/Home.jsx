@@ -56,9 +56,9 @@ export default function Home() {
               </motion.div>
 
               <motion.h1 variants={childVariants} className="text-4xl sm:text-5xl md:text-7xl font-black text-white leading-[1.05] mb-4">
-                Patitas{' '}
+                Sanos{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-300 via-orange-400 to-pink-400">
-                  Conectadas
+                  y Salvos
                 </span>
               </motion.h1>
 
@@ -145,7 +145,7 @@ export default function Home() {
           <ScrollReveal direction="right">
             <span className="text-xs font-bold uppercase tracking-widest text-orange-500">Sobre nosotros</span>
             <h2 className="text-3xl sm:text-4xl font-black text-slate-800 dark:text-white mt-2 mb-4">
-              ¿Qué es Patitas <span className="text-gradient">Conectadas</span>?
+              ¿Qué es Sanos <span className="text-gradient">y Salvos</span>?
             </h2>
             <p className="text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
               Somos una plataforma tecnológica con propósito social: <strong>reducir drásticamente la tasa de mascotas perdidas que nunca regresan a casa</strong>. En Chile, más del 85% de las mascotas extraviadas no logran reunirse con sus familias. Queremos cambiar esa realidad.
@@ -313,7 +313,7 @@ export default function Home() {
                 Estamos aquí para convertir esa esperanza en un reencuentro."
               </p>
               <div className="mt-3 flex items-center gap-3">
-                <span className="font-bold text-sm text-slate-800 dark:text-slate-200">— Equipo Patitas Conectadas</span>
+                <span className="font-bold text-sm text-slate-800 dark:text-slate-200">— Equipo Sanos y Salvos</span>
                 <span className="text-xs text-slate-400">Proyecto GPY1101 · Duoc UC</span>
               </div>
             </div>

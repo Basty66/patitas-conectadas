@@ -44,7 +44,7 @@ export default function Informe() {
               <FileText className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-3xl sm:text-4xl font-black text-slate-800 dark:text-white mb-2">Informe Ejecutivo de Cierre</h1>
-            <p className="text-slate-400 dark:text-slate-500">Patitas Conectadas — GPY1101 — Evaluación Parcial N°4</p>
+            <p className="text-slate-400 dark:text-slate-500">Sanos y Salvos — GPY1101 — Evaluación Parcial N°4</p>
             <p className="text-slate-300 dark:text-slate-600 text-sm mt-1">Informe grupal · Formato PDF · Máx. 6 planas · APA · 30% de la evaluación</p>
           </div>
         </ScrollReveal>

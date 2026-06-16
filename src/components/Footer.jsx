@@ -22,7 +22,7 @@ export default function Footer() {
                 <PawIcon size={20} className="text-white" />
               </div>
               <div>
-                <span className="font-bold text-lg text-white tracking-tight">Patitas</span>
+                <span className="font-bold text-lg text-white tracking-tight">Sanos</span>
                 <span className="font-light text-lg text-orange-300">Conectadas</span>
               </div>
             </Link>
@@ -65,7 +65,7 @@ export default function Footer() {
             <div className="space-y-2.5 text-sm text-slate-400">
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-orange-400" />
-                <span>contacto@patitasconectadas.cl</span>
+                <span>contacto@sanosysalvos.cl</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-orange-400" />
@@ -76,7 +76,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-slate-800 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-600 text-xs">
-          <span>&copy; {new Date().getFullYear()} Patitas Conectadas — Todos los derechos reservados</span>
+          <span>&copy; {new Date().getFullYear()} Sanos y Salvos — Todos los derechos reservados</span>
           <div className="flex items-center gap-4">
             <Link to="/" className="hover:text-slate-400 transition-colors">Inicio</Link>
             <Link to="/galeria" className="hover:text-slate-400 transition-colors">Galería</Link>

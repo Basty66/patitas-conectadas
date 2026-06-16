@@ -26,8 +26,8 @@ const slides = [
 
 /* ── Speaker notes for each slide ── */
 const speakerNotes = {
-  portada: 'Saludo inicial. "Buenos días, somos el equipo de Patitas Conectadas. Hoy presentamos los resultados finales de la evaluación, para el cierre del proyecto. Esta evaluación se realiza en la Sala de Proyectos, semana 16, y corresponde al caso semestral de la asignatura. En esta defensa oral de 15 minutos —70% de la nota— abordaremos 4 preguntas del banco proporcionado por el/la docente: P1 (Indicador 4, 15%): opción de desarrollo a seleccionar con criterios técnicos; P2 (Indicador 5, 20%): justificación del proyecto y problemas que resuelve; P3 (Indicador 6, 20%): resultados y cifras clave; P4 (Indicador 7, 15%): reflexión individual. La calificación es individual según rúbrica — cada integrante responde su pregunta asignada. Comenzamos."',
-  contexto: 'CONTEXTO (previo al Indicador 4): El 85% de mascotas perdidas nunca regresan. 10.000+ al año en Chile. Solo 15% se reencuentran. La organización necesita una plataforma que centralice y agilice la recuperación — problema que resuelve Patitas Conectadas.',
+  portada: 'Saludo inicial. "Buenos días, somos el equipo de Sanos y Salvos. Hoy presentamos los resultados finales de la evaluación, para el cierre del proyecto. Esta evaluación se realiza en la Sala de Proyectos, semana 16, y corresponde al caso semestral de la asignatura. En esta defensa oral de 15 minutos —70% de la nota— abordaremos 4 preguntas del banco proporcionado por el/la docente: P1 (Indicador 4, 15%): opción de desarrollo a seleccionar con criterios técnicos; P2 (Indicador 5, 20%): justificación del proyecto y problemas que resuelve; P3 (Indicador 6, 20%): resultados y cifras clave; P4 (Indicador 7, 15%): reflexión individual. La calificación es individual según rúbrica — cada integrante responde su pregunta asignada. Comenzamos."',
+  contexto: 'CONTEXTO (previo al Indicador 4): El 85% de mascotas perdidas nunca regresan. 10.000+ al año en Chile. Solo 15% se reencuentran. La organización necesita una plataforma que centralice y agilice la recuperación — problema que resuelve Sanos y Salvos.',
   'p-evaluacion': `EVALUACIÓN MULTICRITERIO — Soporte para Indicador 4 y 5.
   
 RESPUESTA (2 min):
@@ -47,7 +47,7 @@ RESPUESTA (2-3 min):
   'p2-justificacion': `INDICADOR 5 (20%) — Justifica la selección del proyecto de software y su vía específica de desarrollo.
    
 RESPUESTA (3-4 min):
-"Justificamos Patitas Conectadas (Opción 1 MVP) por:
+"Justificamos Sanos y Salvos (Opción 1 MVP) por:
 
 1. PROBLEMA RESUELTO: 85% de mascotas perdidas nunca regresan por falta de plataforma centralizada.
 
@@ -77,7 +77,7 @@ Todo el trabajo se realizó en la Sala de Proyectos, usando pizarra para sesione
   'p-tecnologias': `TECNOLOGÍAS UTILIZADAS — Stack técnico del proyecto.
 
 RESPUESTA (1 min):
-"El stack tecnológico de Patitas Conectadas fue:
+"El stack tecnológico de Sanos y Salvos fue:
 • Frontend: React 18 + Vite + Tailwind CSS 3 + Framer Motion — SPA moderna, rápida y responsiva con animaciones fluidas. Despliegue en Vercel.
 • Backend: Express 5 + Node.js 20 — API REST con manejo asíncrono, exportada como handler nativo de Vercel (sin serverless-http).
 • Base de Datos: PostgreSQL 16 en Neon (cloud serverless) con pool asíncrono y helpers all/get/run para consultas parametrizadas.
@@ -88,7 +88,7 @@ RESPUESTA (1 min):
   'p-legal': `MARCO LEGAL APLICABLE — Ley Cholito y Protección de Datos Personales.
 
 RESPUESTA (1.5 min):
-"Patitas Conectadas cumple con 2 marcos legales chilenos fundamentales:
+"Sanos y Salvos cumple con 2 marcos legales chilenos fundamentales:
 
 1. LEY CHOLITO (Ley 21.020 — Tenencia Responsable de Mascotas):
    Promulgada en 2017, establece la responsabilidad de los dueños por el bienestar y control de sus mascotas.
@@ -160,17 +160,17 @@ LECCIONES: La viabilidad técnica es inútil sin flujo de caja saludable. Aprend
   'p-impacto': `IMPACTO SOCIAL Y HUMANO — Cierre emocional de la presentación.
 
 RESPUESTA (1 min):
-"Patitas Conectadas no es solo un proyecto de software con indicadores financieros positivos. Detrás de cada número hay una historia real: el 85% de las mascotas perdidas en Chile nunca regresan a casa. Son más de 10.000 familias al año que pierden a un miembro más de su familia sin saber dónde buscarlo.
+"Sanos y Salvos no es solo un proyecto de software con indicadores financieros positivos. Detrás de cada número hay una historia real: el 85% de las mascotas perdidas en Chile nunca regresan a casa. Son más de 10.000 familias al año que pierden a un miembro más de su familia sin saber dónde buscarlo.
 
 Nuestra plataforma existe para cambiar esa realidad. Con matching por foto usando IA, geoalertas a vecinos cercanos y una red de apoyo integrada con clínicas veterinarias, municipios y refugios, podemos subir la tasa de reencuentro del 15% al 60%+.
 
-Cada vez que alguien encuentra a su mascota gracias a Patitas Conectadas, no es una transacción — es una familia reunida. Ese es el verdadero impacto que medimos. El software es el medio, pero el fin es humano.
+Cada vez que alguien encuentra a su mascota gracias a Sanos y Salvos, no es una transacción — es una familia reunida. Ese es el verdadero impacto que medimos. El software es el medio, pero el fin es humano.
 
 Esto es lo que hace que este proyecto sea especial: no solo es viable financieramente, sino que transforma vidas."`,
   'p-estrategico': `OBJETIVO ESTRATÉGICO — Alineación del proyecto con la visión de la organización.
 
 RESPUESTA (1 min):
-"El objetivo estratégico de Patitas Conectadas es reducir la tasa de mascotas no reencontradas en Chile del 85% al 40% en 3 años, mediante una plataforma digital centralizada que integre a dueños, clínicas veterinarias, municipalidades y refugios en un solo ecosistema.
+"El objetivo estratégico de Sanos y Salvos es reducir la tasa de mascotas no reencontradas en Chile del 85% al 40% en 3 años, mediante una plataforma digital centralizada que integre a dueños, clínicas veterinarias, municipalidades y refugios en un solo ecosistema.
 
 Nuestra visión: ser la plataforma líder de reencuentro de mascotas en Latinoamérica, donde cada mascota perdida tenga una red activa buscándola.
 
@@ -384,7 +384,7 @@ const qaData = [
   },
   {
     q: 'Indicador 5 (20%): Justifique la selección del proyecto de software y su vía específica de desarrollo, ¿Qué particularidades conlleva la implementación de esta opción? ¿Qué problemas específicos resuelve la vía de desarrollo seleccionada?',
-    a: 'Justificamos Patitas Conectadas (Opción 1 MVP) por: (1) Problema resuelto — 85% de mascotas nunca regresan por falta de plataforma centralizada. (2) Vía de desarrollo — Incremental Ágil con entregas quincenales, validación temprana. (3) Particularidades de implementación — Fase 1 (meses 1-6): desarrollo MVP, inversión $46.56M en RRHH. Fase 2 (meses 7-36): operación con 4 roles. Financiamiento: 89% préstamo $50M al 12% + 11% capital $6.24M. (4) Problemas resueltos — matching IA, geoalertas, red de apoyo integrada. (5) Capacidad financiera: Liquidez 6.7 meses, Cobertura intereses 5.6x, Capacidad pago 117%.'
+    a: 'Justificamos Sanos y Salvos (Opción 1 MVP) por: (1) Problema resuelto — 85% de mascotas nunca regresan por falta de plataforma centralizada. (2) Vía de desarrollo — Incremental Ágil con entregas quincenales, validación temprana. (3) Particularidades de implementación — Fase 1 (meses 1-6): desarrollo MVP, inversión $46.56M en RRHH. Fase 2 (meses 7-36): operación con 4 roles. Financiamiento: 89% préstamo $50M al 12% + 11% capital $6.24M. (4) Problemas resueltos — matching IA, geoalertas, red de apoyo integrada. (5) Capacidad financiera: Liquidez 6.7 meses, Cobertura intereses 5.6x, Capacidad pago 117%.'
   },
   {
     q: 'Indicador 6 (20%): Explique los resultados del proceso de forma clara y persuasiva, ¿Cuáles son los datos y cifras relevantes para las partes interesadas? ¿Cómo se da cumplimiento a los requerimientos iniciales?',
@@ -412,11 +412,11 @@ const qaData = [
   },
   {
     q: 'Marco Legal: ¿Qué leyes regulan el proyecto y cómo se cumple con ellas? ¿Cómo impactaron en la selección de la alternativa?',
-    a: 'Dos marcos legales: (1) Ley Cholito (Ley 21.020 — Tenencia Responsable de Mascotas): regula microchip obligatorio y registro nacional. Patitas Conectadas complementa la ley: la App registra mascotas con microchip, permite reportar pérdidas y facilita reencuentros. Municipalidades y clínicas verifican tenencia responsable desde la plataforma. (2) Ley de Protección de Datos (Ley 19.628): regula el tratamiento de datos personales. Nuestro cumplimiento incluye: datos mínimos necesarios, consentimiento expreso en registro, consultas parametrizadas (SQL injection prevention), autenticación por roles (Owner/Admin/Vet), y desarrollo propio (Opción 1) — datos nunca salen de infraestructura controlada. En la matriz multicriterio, Privacidad de Datos (15%) obtuvo 15/15 en Opciones 1 y 2, pero solo 5/15 en Opción 3 (SaaS), lo que contribuyó a descartarla.'
+    a: 'Dos marcos legales: (1) Ley Cholito (Ley 21.020 — Tenencia Responsable de Mascotas): regula microchip obligatorio y registro nacional. Sanos y Salvos complementa la ley: la App registra mascotas con microchip, permite reportar pérdidas y facilita reencuentros. Municipalidades y clínicas verifican tenencia responsable desde la plataforma. (2) Ley de Protección de Datos (Ley 19.628): regula el tratamiento de datos personales. Nuestro cumplimiento incluye: datos mínimos necesarios, consentimiento expreso en registro, consultas parametrizadas (SQL injection prevention), autenticación por roles (Owner/Admin/Vet), y desarrollo propio (Opción 1) — datos nunca salen de infraestructura controlada. En la matriz multicriterio, Privacidad de Datos (15%) obtuvo 15/15 en Opciones 1 y 2, pero solo 5/15 en Opción 3 (SaaS), lo que contribuyó a descartarla.'
   },
   {
     q: 'Impacto Social: ¿Cuál es el impacto real del proyecto en las personas? ¿Por qué es importante más allá de los números?',
-    a: 'Patitas Conectadas busca resolver un problema profundamente humano: el 85% de las mascotas perdidas en Chile nunca regresan a casa — más de 10.000 familias al año. Nuestra plataforma sube la tasa de reencuentro del 15% al 60%+ usando matching por foto con IA, geoalertas a vecinos y red de apoyo con clínicas, municipios y refugios. Detrás de cada indicador financiero hay una historia real: una familia que recupera a su mascota. El proyecto no solo es viable financieramente (VAN +$306M, TIR 178.2%), sino que transforma vidas. Cada reencuentro no es una transacción — es una familia reunida. Ese es el verdadero impacto que buscamos.'
+    a: 'Sanos y Salvos busca resolver un problema profundamente humano: el 85% de las mascotas perdidas en Chile nunca regresan a casa — más de 10.000 familias al año. Nuestra plataforma sube la tasa de reencuentro del 15% al 60%+ usando matching por foto con IA, geoalertas a vecinos y red de apoyo con clínicas, municipios y refugios. Detrás de cada indicador financiero hay una historia real: una familia que recupera a su mascota. El proyecto no solo es viable financieramente (VAN +$306M, TIR 178.2%), sino que transforma vidas. Cada reencuentro no es una transacción — es una familia reunida. Ese es el verdadero impacto que buscamos.'
   },
   {
     q: 'Desglose VAN/TIR/PRI: ¿Cómo se calcularon estos indicadores? ¿Qué significa cada uno y por qué son importantes para el proyecto?',
@@ -460,9 +460,9 @@ CRITERIO TÉCNICO CLAVE: Matching por IA de colores (Sharp.js + distancia euclid
     subtitle: 'Justifique la selección del proyecto de software y su vía específica de desarrollo. ¿Qué particularidades conlleva la implementación de esta opción? ¿Qué problemas específicos resuelve la vía de desarrollo seleccionada?',
     answer: `Respuesta fundamentada — Indicador 5:
 
-Justificamos Patitas Conectadas bajo Opción 1 (MVP) por 5 razones:
+Justificamos Sanos y Salvos bajo Opción 1 (MVP) por 5 razones:
 
-1. PROBLEMA RESUELTO: 85% de mascotas perdidas nunca regresan por falta de plataforma centralizada. Patitas Conectadas centraliza reportes, matching automático y red de apoyo.
+1. PROBLEMA RESUELTO: 85% de mascotas perdidas nunca regresan por falta de plataforma centralizada. Sanos y Salvos centraliza reportes, matching automático y red de apoyo.
 
 2. VÍA DE DESARROLLO: Desarrollo Incremental Ágil con entregas quincenales. Validación temprana con usuarios reales y ajuste continuo del producto.
 
@@ -511,7 +511,7 @@ CUMPLIMIENTO DE REQUERIMIENTOS:
 5. Impacto social: subir tasa de reencuentro del 15% al 60%+ ✓
 
 BENCHMARK INDUSTRIA SaaS:
-| Indicador | Industria | Patitas | Diferencia |
+| Indicador | Industria | Sanos y Salvos | Diferencia |
 | TIR | 25-40% | 178.2% | 4.5x superior |
 | PRI | 24-36m | 20.1m | Récord bajo |
 | Margen Neto | 10-20% | 61.8% | 3x superior |
@@ -640,11 +640,11 @@ CONCLUSIÓN: El stack completo (React → Express → PostgreSQL → Vercel) usa
     subtitle: '¿Qué marcos legales aplican al proyecto y cómo se cumple con ellos? ¿Cómo impactaron en la selección de la alternativa?',
     answer: `Respuesta fundamentada — Marco Legal:
 
-PATITAS CONECTADAS CUMPLE CON 2 MARCOS LEGALES CHILENOS:
+SANOS Y SALVOS CUMPLE CON 2 MARCOS LEGALES CHILENOS:
 
 1. LEY CHOLITO (Ley 21.020 — Tenencia Responsable de Mascotas, 2017):
    Objetivo: Establecer responsabilidades de los dueños por el bienestar y control de sus mascotas, exigiendo registro con microchip y esterilización.
-   Cómo cumplimos: La plataforma se alinea directamente con la ley — el registro de mascotas incluye número de microchip como campo obligatorio, permitiendo a municipalidades y clínicas veterinarias verificar tenencia responsable. Patitas Conectadas no reemplaza la ley, la complementa: digitaliza el proceso de reencuentro usando el microchip como identificador único.
+   Cómo cumplimos: La plataforma se alinea directamente con la ley — el registro de mascotas incluye número de microchip como campo obligatorio, permitiendo a municipalidades y clínicas veterinarias verificar tenencia responsable. Sanos y Salvos no reemplaza la ley, la complementa: digitaliza el proceso de reencuentro usando el microchip como identificador único.
    Impacto: La App fortalece el cumplimiento de la Ley Cholito al facilitar que dueños reporten pérdidas y recuperen mascotas más rápido.
 
 2. LEY DE PROTECCIÓN DE DATOS PERSONALES (Ley 19.628, 1999):
@@ -667,14 +667,14 @@ EL PROBLEMA REAL:
 En Chile, el 85% de las mascotas perdidas nunca regresan a casa. Esto significa más de 10.000 familias al año que pierden a un miembro de su familia — una mascota no es una posesión, es un ser querido — sin tener un canal centralizado para encontrarlo.
 
 LA SOLUCIÓN QUE CAMBIA VIDAS:
-Patitas Conectadas existe para cambiar esa realidad a través de:
+Sanos y Salvos existe para cambiar esa realidad a través de:
 • Matching por foto con IA (Sharp.js + distancia euclidiana RGB, 85%+ precisión): un dueño sube una foto y el sistema encuentra coincidencias automáticamente.
 • Geoalertas a vecinos cercanos: cuando una mascota se pierde, notificamos a usuarios en un radio de 5 km.
 • Red de apoyo integrada: clínicas veterinarias, municipios y refugios colaboran en la búsqueda.
 • Tasa de reencuentro proyectada: del 15% actual al 60%+ — 4 veces más familias reunidas.
 
 EL VERDADERO IMPACTO:
-Detrás de cada indicador financiero (VAN +$306M, TIR 178.2%) hay una historia real. Cada vez que alguien encuentra a su mascota gracias a Patitas Conectadas, no es una transacción — es una familia reunida. El software es el medio, pero el fin es humano.
+Detrás de cada indicador financiero (VAN +$306M, TIR 178.2%) hay una historia real. Cada vez que alguien encuentra a su mascota gracias a Sanos y Salvos, no es una transacción — es una familia reunida. El software es el medio, pero el fin es humano.
 
 Esto es lo que hace que este proyecto sea especial: no solo cumple con todos los indicadores de la rúbrica y es viable financieramente, sino que transforma vidas. Es un negocio rentable con un propósito social genuino.`
   },
@@ -890,7 +890,7 @@ export default function Presentacion() {
   }
 
   return (
-    <article ref={containerRef} className="relative h-screen w-full overflow-hidden bg-slate-900 select-none" aria-label="Presentación evaluación económica Patitas Conectadas">
+    <article ref={containerRef} className="relative h-screen w-full overflow-hidden bg-slate-900 select-none" aria-label="Presentación evaluación económica Sanos y Salvos">
       {/* ── Background transitions ── */}
       <AnimatePresence mode="popLayout" custom={direction}>
         <motion.div key={slide} custom={direction} variants={containerVariants} initial="enter" animate="center" exit="exit"
@@ -946,7 +946,7 @@ export default function Presentacion() {
               </SlideIn>
               <SlideIn delay={0.3}>
                 <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-3 tracking-tight">
-                  Patitas <span className="bg-gradient-to-r from-orange-300 to-pink-300 bg-clip-text text-transparent">Conectadas</span>
+                  Sanos <span className="bg-gradient-to-r from-orange-300 to-pink-300 bg-clip-text text-transparent">y Salvos</span>
                 </h1>
               </SlideIn>
               <SlideIn delay={0.5}>
@@ -1169,7 +1169,7 @@ export default function Presentacion() {
                 <SlideIn delay={0.1}>
                   <div className="bg-rose-500/10 backdrop-blur-sm rounded-xl p-2 sm:p-3 border border-rose-500/20 h-full">
                     <div className="text-rose-300 font-bold text-[8px] sm:text-[10px] mb-0.5"><Heart className="w-2.5 h-2.5 inline mr-0.5" /> Problema Resuelto</div>
-                    <p className="text-white/60 text-[7px] sm:text-[9px] leading-relaxed">85% de mascotas perdidas nunca regresan. Patitas Conectadas centraliza reportes, matching automático y red de apoyo en una plataforma.</p>
+                    <p className="text-white/60 text-[7px] sm:text-[9px] leading-relaxed">85% de mascotas perdidas nunca regresan. Sanos y Salvos centraliza reportes, matching automático y red de apoyo en una plataforma.</p>
                   </div>
                 </SlideIn>
                 <SlideIn delay={0.15}>
@@ -1487,7 +1487,7 @@ export default function Presentacion() {
                 <div className="max-w-5xl mx-auto bg-gradient-to-br from-amber-900/20 to-orange-900/20 backdrop-blur-sm rounded-xl p-2 sm:p-3 border border-amber-500/20">
                   <p className="text-amber-300/80 text-[7px] sm:text-[9px] uppercase tracking-wider text-center font-bold mb-1"><BarChart3 className="w-3 h-3 inline mr-0.5" /> Benchmark Industria SaaS</p>
                   <div className="grid grid-cols-4 gap-x-2 gap-y-0.5 text-[7px] sm:text-[9px] items-center max-w-md mx-auto">
-                    <div className="text-white/30 font-medium">Indicador</div><div className="text-white/30 text-center">Industria</div><div className="text-white/30 text-center">Patitas</div><div className="text-white/30 text-center">Brecha</div>
+                    <div className="text-white/30 font-medium">Indicador</div><div className="text-white/30 text-center">Industria</div><div className="text-white/30 text-center">Sanos y Salvos</div><div className="text-white/30 text-center">Brecha</div>
                     <span className="text-white/70">TIR</span><span className="text-white/40 text-center">25-40%</span><span className="text-emerald-300 font-bold text-center">178.2%</span><span className="text-emerald-300 text-center">↑ 4.5x</span>
                     <span className="text-white/70">PRI</span><span className="text-white/40 text-center">24-36m</span><span className="text-emerald-300 font-bold text-center">20.1m</span><span className="text-emerald-300 text-center">Récord</span>
                     <span className="text-white/70">Margen Neto</span><span className="text-white/40 text-center">10-20%</span><span className="text-emerald-300 font-bold text-center">61.8%</span><span className="text-emerald-300 text-center">↑ 3x</span>
@@ -1642,7 +1642,7 @@ export default function Presentacion() {
                     </div>
                     <div className="bg-white/10 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-white/10 text-center">
                       <div className="text-emerald-300 font-black text-lg sm:text-2xl">60%+</div>
-                      <p className="text-white/50 text-[9px] sm:text-xs">Tasa proyectada con Patitas</p>
+                      <p className="text-white/50 text-[9px] sm:text-xs">Tasa proyectada con Sanos y Salvos</p>
                     </div>
                     <div className="bg-white/10 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-white/10 text-center">
                       <div className="text-amber-300 font-black text-lg sm:text-2xl">4x</div>
@@ -1654,7 +1654,7 @@ export default function Presentacion() {
                 <SlideIn delay={0.2}>
                   <div className="bg-gradient-to-br from-rose-900/20 to-pink-900/20 backdrop-blur-sm rounded-xl p-3 sm:p-5 border border-rose-500/20">
                     <p className="text-white/70 text-xs sm:text-sm leading-relaxed text-center italic">
-                      "Cada vez que alguien encuentra a su mascota gracias a Patitas Conectadas, no es una transacción — <span className="text-pink-200 font-semibold">es una familia reunida</span>. El software es el medio, pero el fin es humano. Esto es lo que hace que este proyecto sea especial: no solo es viable financieramente, sino que <span className="text-emerald-200 font-semibold">transforma vidas</span>."
+                      "Cada vez que alguien encuentra a su mascota gracias a Sanos y Salvos, no es una transacción — <span className="text-pink-200 font-semibold">es una familia reunida</span>. El software es el medio, pero el fin es humano. Esto es lo que hace que este proyecto sea especial: no solo es viable financieramente, sino que <span className="text-emerald-200 font-semibold">transforma vidas</span>."
                     </p>
                   </div>
                 </SlideIn>
