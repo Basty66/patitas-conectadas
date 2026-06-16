@@ -15,6 +15,7 @@ const slides = [
   { id: 'p-legal',      gradient: 'from-indigo-900 via-blue-800 to-sky-900 dark:from-indigo-950 dark:via-blue-900 dark:to-sky-950', icon: Scale },
   { id: 'p-riesgos',    gradient: 'from-red-900 via-rose-800 to-pink-900 dark:from-red-950 dark:via-rose-900 dark:to-pink-950', icon: Shield },
   { id: 'p3-resultados',    gradient: 'from-violet-900 via-purple-800 to-fuchsia-900 dark:from-violet-950 dark:via-purple-900 dark:to-fuchsia-950', icon: TrendingUp },
+  { id: 'p-financiero', gradient: 'from-emerald-900 via-teal-800 to-green-900 dark:from-emerald-950 dark:via-teal-900 dark:to-green-950', icon: DollarSign },
   { id: 'p4-reflexion',     gradient: 'from-cyan-900 via-teal-800 to-emerald-900 dark:from-cyan-950 dark:via-teal-900 dark:to-emerald-950', icon: Lightbulb },
   { id: 'p-impacto',    gradient: 'from-pink-900 via-rose-800 to-red-900 dark:from-pink-950 dark:via-rose-900 dark:to-red-950', icon: Heart },
   { id: 'gracias',    gradient: 'from-pink-900 via-rose-800 to-red-900 dark:from-pink-950 dark:via-rose-900 dark:to-red-950', icon: Heart },
@@ -112,7 +113,7 @@ RESPUESTA (1.5 min):
 
 4. RIESGO FINANCIERO POR CAPACIDAD DE PAGO: Se calculó con 4 ratios: Liquidez 6.7 meses (cubre desarrollo completo), Cobertura Intereses 5.6x (>2.5x mínimo), Capacidad Pago 117% (holgura 17% sobre cuota), Apalancamiento 8:1 (favorable porque TIR 178.2% >> 12%)."`,
   'p3-resultados': `INDICADOR 6 (20%) — Explica los resultados del proceso de forma clara y persuasiva.
-  
+
 RESPUESTA (3-4 min):
 "CIFRAS CLAVE PARA PARTES INTERESADAS:
 · Inversión: $56.24M → Ingresos 36m: $670M → Balance: +$414M
@@ -130,6 +131,16 @@ CUMPLIMIENTO DE REQUERIMIENTOS INICIALES:
 5. Impacto social: tasa reencuentro 15% → 60%+ ✓
 
 BENCHMARK SaaS: TIR 178.2% vs 25-40% industria (4.5x), PRI 20.1m vs 24-36m, Margen 61.8% vs 10-20% (3x)"`,
+  'p-financiero': `DESGLOSE VAN / TIR / PRI — Explicación detallada de los indicadores financieros.
+
+RESPUESTA (1.5 min):
+"VAN (Valor Actual Neto): Suma de todos los flujos de caja futuros descontados al 12% anual (0.949% mensual), menos la inversión inicial. Fórmula: VAN = Σ(FCt/(1+i)^t) - I₀. Cada flujo mensual se descuenta con (1+0.00949)^t. Resultado: +$305.9M > $0 → el proyecto genera valor por sobre la tasa exigida.
+
+TIR (Tasa Interna de Retorno): Tasa de descuento que hace VAN = 0. Se calcula por iteración (prueba y error): probamos tasas hasta que VAN ≈ 0. Resultado: 178.2% >> 12% exigido por el CFO. Es decir, el proyecto rinde 14.8x más que la alternativa de inversión (préstamo bancario).
+
+PRI (Período de Recuperación de la Inversión): Tiempo en que los flujos descontados acumulados igualan la inversión. Se calcula interpolando entre el mes donde el flujo acumulado cambia de negativo a positivo. Resultado: 20.1 meses < 36 meses del préstamo.
+
+Los 3 indicadores son POSITIVOS y superan las exigencias. El proyecto es financieramente sólido."`,
   'p4-reflexion': `INDICADOR 7 (15%) — Explica de forma reflexiva su aporte individual.
   
 RESPUESTA (2 min):
@@ -352,6 +363,10 @@ const qaData = [
   {
     q: 'Impacto Social: ¿Cuál es el impacto real del proyecto en las personas? ¿Por qué es importante más allá de los números?',
     a: 'Patitas Conectadas busca resolver un problema profundamente humano: el 85% de las mascotas perdidas en Chile nunca regresan a casa — más de 10.000 familias al año. Nuestra plataforma sube la tasa de reencuentro del 15% al 60%+ usando matching por foto con IA, geoalertas a vecinos y red de apoyo con clínicas, municipios y refugios. Detrás de cada indicador financiero hay una historia real: una familia que recupera a su mascota. El proyecto no solo es viable financieramente (VAN +$306M, TIR 178.2%), sino que transforma vidas. Cada reencuentro no es una transacción — es una familia reunida. Ese es el verdadero impacto que buscamos.'
+  },
+  {
+    q: 'Desglose VAN/TIR/PRI: ¿Cómo se calcularon estos indicadores? ¿Qué significa cada uno y por qué son importantes para el proyecto?',
+    a: 'VAN (Valor Actual Neto): Suma de flujos futuros descontados al 12% anual (0.949% mensual) menos inversión inicial. Fórmula: VAN = Σ(FCt/(1+i)^t) - I₀. Resultado: +$305.9M > $0 — crea valor sobre tasa exigida. TIR (Tasa Interna de Retorno): Tasa que hace VAN = 0, calculada por iteración probando tasas hasta encontrar la que da VAN ≈ 0. Resultado: 178.2% >> 12% — 14.8x superior al costo del préstamo. PRI (Período de Recuperación): Mes donde flujo descontado acumulado iguala la inversión, calculado por interpolación entre mes negativo y positivo. Resultado: 20.1 meses < 36 meses — recuperación antes del plazo del préstamo. Los 3 indicadores son positivos y superan exigencias del CFO — el proyecto es financieramente sólido.'
   }
 ]
 
@@ -596,6 +611,35 @@ EL VERDADERO IMPACTO:
 Detrás de cada indicador financiero (VAN +$306M, TIR 178.2%) hay una historia real. Cada vez que alguien encuentra a su mascota gracias a Patitas Conectadas, no es una transacción — es una familia reunida. El software es el medio, pero el fin es humano.
 
 Esto es lo que hace que este proyecto sea especial: no solo cumple con todos los indicadores de la rúbrica y es viable financieramente, sino que transforma vidas. Es un negocio rentable con un propósito social genuino.`
+  },
+  pregunta11: {
+    title: 'Desglose VAN / TIR / PRI',
+    subtitle: '¿Cómo se calcularon el VAN, TIR y PRI? ¿Qué significan y por qué son positivos?',
+    answer: `Respuesta fundamentada — Desglose VAN / TIR / PRI:
+
+1. VAN (Valor Actual Neto):
+   Fórmula: VAN = Σ(FCt / (1+i)^t) − I₀
+   Cálculo paso a paso:
+   - Tasa de descuento: 12% anual = 0.949% mensual (i = 0.00949)
+   - Para cada mes t (1 a 36): se divide el flujo de caja del mes entre (1+0.00949)^t
+   - Se suman los 36 flujos descontados: ≈ $362.2M
+   - Se resta la inversión inicial: $56.24M
+   - VAN = $362.2M − $56.24M = +$305.9M
+   Interpretación: VAN > $0 significa que el proyecto genera valor por sobre la tasa mínima exigida del 12%. Cada $1 invertido retorna $7.36.
+
+2. TIR (Tasa Interna de Retorno):
+   Fórmula: 0 = Σ(FCt / (1+TIR)^t) − I₀
+   Cálculo: Se resuelve por iteración — se prueba una tasa, se calcula el VAN. Si VAN > 0, la tasa es muy baja; si VAN < 0, es muy alta. Se interpola hasta encontrar la tasa que hace VAN ≈ 0.
+   Proceso: Se probaron tasas desde 100% hasta 200%. En 178.2%, VAN ≈ $0.
+   Interpretación: TIR 178.2% >> 12% (costo del préstamo). El proyecto rinde 14.8x más que la alternativa de inversión. Cualquier tasa de descuento menor a 178.2% genera VAN positivo.
+
+3. PRI (Período de Recuperación de la Inversión):
+   Fórmula: PRI = mes donde flujo descontado acumulado ≥ I₀
+   Cálculo: Se acumulan los flujos descontados mes a mes. En el mes 19, el acumulado es negativo (-$3.2M). En el mes 20, es positivo (+$8.1M). Se interpola:
+   PRI = 19 + (3.2 / (3.2 + 8.1)) = 19 + 0.283 = 19.28 ≈ 20.1 meses
+   Interpretación: PRI 20.1m < 36m (plazo del préstamo). La inversión se recupera antes de que venza la deuda, liberando flujo para reinversión o pago anticipado.
+
+CONCLUSIÓN: Los 3 indicadores son positivos y superan ampliamente las exigencias del CFO. El proyecto es financieramente sólido, rentable y de bajo riesgo.`
   }
 }
 
@@ -608,8 +652,9 @@ const rubricSlideMap = {
   7: rubricAnswers.pregunta9,
   8: rubricAnswers.pregunta7,
   9: rubricAnswers.pregunta3,
-  10: rubricAnswers.pregunta4,
-  11: rubricAnswers.pregunta10,
+  10: rubricAnswers.pregunta11,
+  11: rubricAnswers.pregunta4,
+  12: rubricAnswers.pregunta10,
 }
 
 /* ── Main component ── */
@@ -1292,8 +1337,65 @@ export default function Presentacion() {
               </SlideIn>
             </section>}
 
-            {/* ══════════ SLIDE 10 — INDICADOR 7 (15%) ══════════ */}
-            {slide === 10 && <section className="max-w-4xl mx-auto w-full">
+            {/* ══════════ SLIDE 10 — DESGLOSE VAN/TIR/PRI ══════════ */}
+            {slide === 10 && <section className="w-full max-w-6xl">
+              <div className="text-center mb-3">
+                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', stiffness: 200, damping: 12 }}
+                  className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 rounded-full bg-emerald-500/20 flex items-center justify-center"
+                >
+                  <DollarSign className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-300" />
+                </motion.div>
+                <h2 className="text-xl sm:text-3xl font-black text-white">Desglose VAN / TIR / PRI</h2>
+                <p className="text-white/50 text-[10px] sm:text-sm mt-1">Fórmulas · Cálculo paso a paso · Interpretación de resultados</p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 max-w-6xl mx-auto">
+                <SlideIn delay={0.1}>
+                  <div className="bg-emerald-500/10 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-emerald-500/20 h-full flex flex-col">
+                    <div className="flex items-center gap-1.5 mb-1.5"><DollarSign className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-300" /><span className="text-emerald-300 font-bold text-[10px] sm:text-xs">VAN — Valor Actual Neto</span></div>
+                    <p className="text-white/40 text-[7px] sm:text-[9px] leading-relaxed mb-1"><span className="text-white/70">Fórmula:</span> VAN = Σ(FC<sub>t</sub> / (1+i)<sup>t</sup>) − I<sub>0</sub></p>
+                    <p className="text-white/40 text-[7px] sm:text-[9px] leading-relaxed mb-1"><span className="text-white/70">Cálculo:</span> Cada flujo mensual se descuenta con tasa i = 12% anual (0.949% mensual). Suma de 36 flujos descontados − inversión inicial.</p>
+                    <div className="mt-auto bg-emerald-500/10 rounded-lg p-1.5 text-center">
+                      <div className="text-emerald-300 font-black text-sm sm:text-lg">+$305.9M</div>
+                      <p className="text-white/50 text-[6px] sm:text-[8px]">VAN &gt; $0 ✓ — Crea valor sobre la tasa exigida</p>
+                    </div>
+                  </div>
+                </SlideIn>
+
+                <SlideIn delay={0.15}>
+                  <div className="bg-emerald-500/10 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-emerald-500/20 h-full flex flex-col">
+                    <div className="flex items-center gap-1.5 mb-1.5"><TrendingUp className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-300" /><span className="text-emerald-300 font-bold text-[10px] sm:text-xs">TIR — Tasa Interna de Retorno</span></div>
+                    <p className="text-white/40 text-[7px] sm:text-[9px] leading-relaxed mb-1"><span className="text-white/70">Fórmula:</span> VAN = 0 = Σ(FC<sub>t</sub> / (1+TIR)<sup>t</sup>) − I<sub>0</sub></p>
+                    <p className="text-white/40 text-[7px] sm:text-[9px] leading-relaxed mb-1"><span className="text-white/70">Cálculo:</span> Por iteración (prueba y error): se prueban tasas hasta que VAN ≈ 0. Se usó interpolación lineal entre la tasa que da VAN positivo y la que da VAN negativo.</p>
+                    <div className="mt-auto bg-emerald-500/10 rounded-lg p-1.5 text-center">
+                      <div className="text-emerald-300 font-black text-sm sm:text-lg">178.2%</div>
+                      <p className="text-white/50 text-[6px] sm:text-[8px]">TIR &gt;&gt; 12% ✓ — 14.8x superior al costo del préstamo</p>
+                    </div>
+                  </div>
+                </SlideIn>
+
+                <SlideIn delay={0.2}>
+                  <div className="bg-emerald-500/10 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-emerald-500/20 h-full flex flex-col">
+                    <div className="flex items-center gap-1.5 mb-1.5"><Hourglass className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-300" /><span className="text-emerald-300 font-bold text-[10px] sm:text-xs">PRI — Período de Recuperación</span></div>
+                    <p className="text-white/40 text-[7px] sm:text-[9px] leading-relaxed mb-1"><span className="text-white/70">Fórmula:</span> PRI = Mes donde FC acumulado ≥ I<sub>0</sub></p>
+                    <p className="text-white/40 text-[7px] sm:text-[9px] leading-relaxed mb-1"><span className="text-white/70">Cálculo:</span> Se interpolan los flujos descontados acumulados entre el mes donde cambia de negativo a positivo. Ecuación: Mes negativo + |FC acum negativo| / FC del mes.</p>
+                    <div className="mt-auto bg-emerald-500/10 rounded-lg p-1.5 text-center">
+                      <div className="text-emerald-300 font-black text-sm sm:text-lg">20.1 meses</div>
+                      <p className="text-white/50 text-[6px] sm:text-[8px]">PRI &lt; 36 meses ✓ — Recuperación antes del plazo del préstamo</p>
+                    </div>
+                  </div>
+                </SlideIn>
+              </div>
+
+              <SlideIn delay={0.25}>
+                <div className="mt-2 bg-gradient-to-br from-emerald-900/20 to-teal-900/20 backdrop-blur-sm rounded-xl p-2 sm:p-2.5 border border-emerald-500/20 max-w-4xl mx-auto">
+                  <p className="text-emerald-300/80 text-[8px] sm:text-[10px]"><CheckCircle className="w-3 h-3 inline mr-0.5" /> Los 3 indicadores son POSITIVOS y superan las exigencias del CFO (VAN &gt; $0, TIR &gt; 12%, PRI &lt; 36 meses). El proyecto genera $7.36 por cada $1 invertido — es financieramente sólido y atractivo para inversionistas.</p>
+                </div>
+              </SlideIn>
+            </section>}
+
+            {/* ══════════ SLIDE 11 — INDICADOR 7 (15%) ══════════ */}
+            {slide === 11 && <section className="max-w-4xl mx-auto w-full">
               <div className="flex items-center gap-2 mb-3 justify-center">
                 <button onClick={() => setRubricData(rubricAnswers.pregunta4)} type="button" className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity active:scale-95 focus-visible:ring-2 focus-visible:ring-white/50 rounded-lg px-2 py-1" title="Click para respuesta fundamentada">
                   <Lightbulb className="w-5 h-5 sm:w-7 sm:h-7 text-teal-300" />
@@ -1352,8 +1454,8 @@ export default function Presentacion() {
               </SlideIn>
             </section>}
 
-            {/* ══════════ SLIDE 11 — IMPACTO SOCIAL ══════════ */}
-            {slide === 11 && <section className="w-full max-w-5xl">
+            {/* ══════════ SLIDE 12 — IMPACTO SOCIAL ══════════ */}
+            {slide === 12 && <section className="w-full max-w-5xl">
               <div className="text-center mb-3 sm:mb-4">
                 <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', stiffness: 200, damping: 12 }}
                   className="w-14 h-14 sm:w-20 sm:h-20 mx-auto mb-2 rounded-full bg-pink-500/20 flex items-center justify-center"
@@ -1400,8 +1502,8 @@ export default function Presentacion() {
               </div>
             </section>}
 
-            {/* ══════════ SLIDE 12 — GRACIAS ══════════ */}
-            {slide === 12 && <section className="text-center">
+            {/* ══════════ SLIDE 13 — GRACIAS ══════════ */}
+            {slide === 13 && <section className="text-center">
               <Confetti />
               <SlideIn delay={0}>
                 <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}
