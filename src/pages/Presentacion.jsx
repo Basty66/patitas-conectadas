@@ -7,8 +7,10 @@ import { ChevronLeft, ChevronRight, ChevronDown, Maximize2, Minimize2, PawPrint,
 const slides = [
   { id: 'portada',    gradient: 'from-slate-900 via-blue-900 to-indigo-900 dark:from-black dark:via-blue-950 dark:to-indigo-950', icon: PawPrint },
   { id: 'contexto',   gradient: 'from-rose-900 via-red-800 to-orange-900 dark:from-rose-950 dark:via-red-900 dark:to-orange-950', icon: Heart },
+  { id: 'p-evaluacion', gradient: 'from-amber-900 via-yellow-800 to-orange-900 dark:from-amber-950 dark:via-yellow-900 dark:to-orange-950', icon: Scale },
   { id: 'p1-opcion',  gradient: 'from-emerald-900 via-teal-800 to-cyan-900 dark:from-emerald-950 dark:via-teal-900 dark:to-cyan-950', icon: Target },
   { id: 'p2-justificacion', gradient: 'from-blue-900 via-cyan-800 to-sky-900 dark:from-blue-950 dark:via-cyan-900 dark:to-sky-950', icon: BarChart3 },
+  { id: 'p-metodos',  gradient: 'from-purple-900 via-violet-800 to-indigo-900 dark:from-purple-950 dark:via-violet-900 dark:to-indigo-950', icon: BookOpen },
   { id: 'p3-resultados',    gradient: 'from-violet-900 via-purple-800 to-fuchsia-900 dark:from-violet-950 dark:via-purple-900 dark:to-fuchsia-950', icon: TrendingUp },
   { id: 'p4-reflexion',     gradient: 'from-cyan-900 via-teal-800 to-emerald-900 dark:from-cyan-950 dark:via-teal-900 dark:to-emerald-950', icon: Lightbulb },
   { id: 'gracias',    gradient: 'from-pink-900 via-rose-800 to-red-900 dark:from-pink-950 dark:via-rose-900 dark:to-red-950', icon: Heart },
@@ -18,6 +20,10 @@ const slides = [
 const speakerNotes = {
   portada: 'Saludo inicial. "Buenos días, somos el equipo de Patitas Conectadas. Hoy presentamos los resultados finales de la evaluación, para el cierre del proyecto. Esta evaluación se realiza en la Sala de Proyectos, semana 16, y corresponde al caso semestral de la asignatura. En esta defensa oral de 15 minutos —70% de la nota— abordaremos 4 preguntas del banco proporcionado por el/la docente: P1 (Indicador 4, 15%): opción de desarrollo a seleccionar con criterios técnicos; P2 (Indicador 5, 20%): justificación del proyecto y problemas que resuelve; P3 (Indicador 6, 20%): resultados y cifras clave; P4 (Indicador 7, 15%): reflexión individual. La calificación es individual según rúbrica — cada integrante responde su pregunta asignada. Comenzamos."',
   contexto: 'CONTEXTO (previo al Indicador 4): El 85% de mascotas perdidas nunca regresan. 10.000+ al año en Chile. Solo 15% se reencuentran. La organización necesita una plataforma que centralice y agilice la recuperación — problema que resuelve Patitas Conectadas.',
+  'p-evaluacion': `EVALUACIÓN MULTICRITERIO — Soporte para Indicador 4 y 5.
+  
+RESPUESTA (2 min):
+"Aplicamos una matriz de decisión ponderada con 6 criterios agrupados en 3 dimensiones: Técnicos (Funcionalidad Core 20%, Integración 20%), Administrativos (Capacidad Equipo 15%, Viabilidad Financiera 15%), y Normativos (Privacidad 15%, Propiedad Intelectual 15%). Cada criterio se puntuó de 0 a 20 usando como fuentes: requerimientos del CTO (criterios técnicos), del CFO (criterios administrativos) y marco legal chileno (normativos). Resultados: Opción 1 (MVP Ágil PRO) 85% — FACTIBLE; Opción 2 (Cascada Total) 80% — RIESGO ALTO por TIR negativa; Opción 3 (SaaS Híbrido) 63% — DEFICIENTE por incumplimiento normativo. La Opción 1 destaca en capacidad del equipo (15/15), viabilidad financiera (15/15) y normativo completo (30/30)."`,
   'p1-opcion': `INDICADOR 4 (15%) — Resume de forma atractiva la opción de desarrollo a seleccionar.
   
 RESPUESTA (2-3 min):
@@ -31,7 +37,7 @@ RESPUESTA (2-3 min):
 
 4. NECESIDADES DE LA ORGANIZACIÓN: Solución URGENTE — MVP entrega valor en 6 meses vs 18+ de Opción 2. Matching IA (Sharp.js + distancia euclidiana RGB, 85%+ precisión) + geoalertas."`,
   'p2-justificacion': `INDICADOR 5 (20%) — Justifica la selección del proyecto de software y su vía específica de desarrollo.
-  
+   
 RESPUESTA (3-4 min):
 "Justificamos Patitas Conectadas (Opción 1 MVP) por:
 
@@ -52,6 +58,14 @@ RESPUESTA (3-4 min):
    - Geoalertas por coordenadas
 
 5. CAPACIDAD FINANCIERA: Liquidez 6.7 meses, Cobertura intereses 5.6x, Capacidad pago 117%."`,
+  'p-metodos': `HERRAMIENTAS Y MÉTODOS — Soporte técnico a Indicadores 2 y 5.
+
+RESPUESTA (1.5 min):
+"Las herramientas colaborativas utilizadas fueron: Ofimática 365 para documentación y tablas; Project Libre para cronograma y asignación de recursos (workbench con WBS y ruta crítica); Git/GitHub para control de versiones y trabajo colaborativo en código; Vercel para despliegue continuo; y Neon (PostgreSQL) para base de datos en la nube.
+
+Los métodos de análisis aplicados: Matriz Multicriterio Ponderada (selección de alternativas con 6 criterios y 3 dimensiones), Análisis Financiero (VAN/TIR/PRI con flujo de caja descontado a 12% anual), Análisis de Capacidad Financiera (4 indicadores), y Benchmark con industria SaaS.
+
+Todo el trabajo se realizó en la Sala de Proyectos, usando pizarra para sesiones de planning semanales y TV para revisiones de sprint."`,
   'p3-resultados': `INDICADOR 6 (20%) — Explica los resultados del proceso de forma clara y persuasiva.
   
 RESPUESTA (3-4 min):
@@ -368,10 +382,10 @@ Este proyecto me preparó para tomar decisiones de inversión en tecnología con
 }
 
 const rubricSlideMap = {
-  2: rubricAnswers.pregunta1,
-  3: rubricAnswers.pregunta2,
-  4: rubricAnswers.pregunta3,
-  5: rubricAnswers.pregunta4,
+  3: rubricAnswers.pregunta1,
+  4: rubricAnswers.pregunta2,
+  6: rubricAnswers.pregunta3,
+  7: rubricAnswers.pregunta4,
 }
 
 /* ── Main component ── */
@@ -557,8 +571,113 @@ export default function Presentacion() {
               </aside>
             </section>}
 
-            {/* ══════════ SLIDE 2 — INDICADOR 4 (15%) ══════════ */}
-            {slide === 2 && <section className="w-full max-w-5xl">
+            {/* ══════════ SLIDE 2 — EVALUACIÓN MULTICRITERIO ══════════ */}
+            {slide === 2 && <section className="w-full max-w-6xl">
+              <div className="text-center mb-3">
+                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', stiffness: 200, damping: 12 }}
+                  className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 rounded-full bg-amber-500/20 flex items-center justify-center"
+                >
+                  <Scale className="w-6 h-6 sm:w-8 sm:h-8 text-amber-300" />
+                </motion.div>
+                <h2 className="text-xl sm:text-3xl font-black text-white">Evaluación Multicriterio — Selección de Alternativas</h2>
+                <p className="text-white/50 text-[10px] sm:text-sm mt-1">Matriz de decisión ponderada · 3 dimensiones · 6 criterios técnicos, administrativos y normativos</p>
+              </div>
+
+              <SlideIn delay={0.1}>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-[8px] sm:text-xs border-collapse">
+                    <thead>
+                      <tr className="border-b border-white/10">
+                        <th className="text-left py-1.5 pr-2 text-white/60 font-semibold">Criterio Evaluado</th>
+                        <th className="text-center py-1.5 px-1 text-white/40 text-[6px] sm:text-[9px]">Dimensión</th>
+                        <th className="text-center py-1.5 px-1 text-white/40 text-[6px] sm:text-[9px]">Peso</th>
+                        <th className="text-center py-1.5 px-1 text-emerald-300 font-semibold">Opción 1<br/><span className="text-[7px] sm:text-[10px] font-normal">MVP Ágil PRO</span></th>
+                        <th className="text-center py-1.5 px-1 text-amber-300 font-semibold">Opción 2<br/><span className="text-[7px] sm:text-[10px] font-normal">Cascada Total</span></th>
+                        <th className="text-center py-1.5 px-1 text-rose-300 font-semibold">Opción 3<br/><span className="text-[7px] sm:text-[10px] font-normal">SaaS Híbrido</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                        <td className="py-1 pr-2 text-white/80 font-medium">Funcionalidad Core</td>
+                        <td className="text-center px-1"><span className="px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 text-[6px] sm:text-[9px]">Técnico</span></td>
+                        <td className="text-center px-1 text-white/60">20%</td>
+                        <td className="text-center px-1"><span className="font-bold text-emerald-300">15</span><span className="text-white/40">/20</span></td>
+                        <td className="text-center px-1"><span className="font-bold text-amber-300">20</span><span className="text-white/40">/20</span></td>
+                        <td className="text-center px-1"><span className="font-bold text-rose-300">18</span><span className="text-white/40">/20</span></td>
+                      </tr>
+                      <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                        <td className="py-1 pr-2 text-white/80 font-medium">Integración Sistemas</td>
+                        <td className="text-center px-1"><span className="px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 text-[6px] sm:text-[9px]">Técnico</span></td>
+                        <td className="text-center px-1 text-white/60">20%</td>
+                        <td className="text-center px-1"><span className="font-bold text-emerald-300">10</span><span className="text-white/40">/20</span></td>
+                        <td className="text-center px-1"><span className="font-bold text-amber-300">20</span><span className="text-white/40">/20</span></td>
+                        <td className="text-center px-1"><span className="font-bold text-rose-300">15</span><span className="text-white/40">/20</span></td>
+                      </tr>
+                      <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                        <td className="py-1 pr-2 text-white/80 font-medium">Capacidad del Equipo</td>
+                        <td className="text-center px-1"><span className="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 text-[6px] sm:text-[9px]">Admin.</span></td>
+                        <td className="text-center px-1 text-white/60">15%</td>
+                        <td className="text-center px-1"><span className="font-bold text-emerald-300">15</span><span className="text-white/40">/15</span></td>
+                        <td className="text-center px-1"><span className="font-bold text-amber-300">5</span><span className="text-white/40">/15</span></td>
+                        <td className="text-center px-1"><span className="font-bold text-rose-300">10</span><span className="text-white/40">/15</span></td>
+                      </tr>
+                      <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                        <td className="py-1 pr-2 text-white/80 font-medium">Viabilidad Financiera</td>
+                        <td className="text-center px-1"><span className="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 text-[6px] sm:text-[9px]">Admin.</span></td>
+                        <td className="text-center px-1 text-white/60">15%</td>
+                        <td className="text-center px-1"><span className="font-bold text-emerald-300">15</span><span className="text-white/40">/15</span></td>
+                        <td className="text-center px-1"><span className="font-bold text-amber-300">5</span><span className="text-white/40">/15</span></td>
+                        <td className="text-center px-1"><span className="font-bold text-rose-300">10</span><span className="text-white/40">/15</span></td>
+                      </tr>
+                      <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                        <td className="py-1 pr-2 text-white/80 font-medium">Privacidad de Datos</td>
+                        <td className="text-center px-1"><span className="px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300 text-[6px] sm:text-[9px]">Normativo</span></td>
+                        <td className="text-center px-1 text-white/60">15%</td>
+                        <td className="text-center px-1"><span className="font-bold text-emerald-300">15</span><span className="text-white/40">/15</span></td>
+                        <td className="text-center px-1"><span className="font-bold text-amber-300">15</span><span className="text-white/40">/15</span></td>
+                        <td className="text-center px-1"><span className="font-bold text-rose-300">5</span><span className="text-white/40">/15</span></td>
+                      </tr>
+                      <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
+                        <td className="py-1 pr-2 text-white/80 font-medium">Propiedad Intelectual</td>
+                        <td className="text-center px-1"><span className="px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300 text-[6px] sm:text-[9px]">Normativo</span></td>
+                        <td className="text-center px-1 text-white/60">15%</td>
+                        <td className="text-center px-1"><span className="font-bold text-emerald-300">15</span><span className="text-white/40">/15</span></td>
+                        <td className="text-center px-1"><span className="font-bold text-amber-300">15</span><span className="text-white/40">/15</span></td>
+                        <td className="text-center px-1"><span className="font-bold text-rose-300">5</span><span className="text-white/40">/15</span></td>
+                      </tr>
+                      <tr className="bg-white/10 font-bold">
+                        <td className="py-1.5 pr-2 text-white">Veredicto Final</td>
+                        <td className="text-center px-1"></td>
+                        <td className="text-center px-1 text-white">100%</td>
+                        <td className="text-center px-1"><span className="text-emerald-300 text-sm sm:text-lg">85%</span><br/><span className="text-emerald-300/80 text-[7px]">Factible</span></td>
+                        <td className="text-center px-1"><span className="text-amber-300 text-sm sm:text-lg">80%</span><br/><span className="text-amber-300/80 text-[7px]">Riesgo Alto</span></td>
+                        <td className="text-center px-1"><span className="text-rose-300 text-sm sm:text-lg">63%</span><br/><span className="text-rose-300/80 text-[7px]">Deficiente</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </SlideIn>
+
+              <SlideIn delay={0.2}>
+                <div className="mt-2 grid grid-cols-3 gap-2 max-w-4xl mx-auto">
+                  <div className="bg-emerald-500/10 rounded-xl p-2 border border-emerald-500/20 text-center">
+                    <div className="text-emerald-300 font-bold text-sm">Opción 1: 85% ✅</div>
+                    <p className="text-white/50 text-[8px]">MVP Ágil PRO — SELECCIONADA. Destaca en capacidad equipo, viabilidad financiera y normativo.</p>
+                  </div>
+                  <div className="bg-amber-500/10 rounded-xl p-2 border border-amber-500/20 text-center">
+                    <div className="text-amber-300 font-bold text-sm">Opción 2: 80% ⚠️</div>
+                    <p className="text-white/50 text-[8px]">Cascada Total — RIESGO ALTO. Gana en técnico pero pierde en financiero (TIR negativa).</p>
+                  </div>
+                  <div className="bg-rose-500/10 rounded-xl p-2 border border-rose-500/20 text-center">
+                    <div className="text-rose-300 font-bold text-sm">Opción 3: 63% ❌</div>
+                    <p className="text-white/50 text-[8px]">SaaS Híbrido — DEFICIENTE. Incumple normativa de privacidad y propiedad intelectual.</p>
+                  </div>
+                </div>
+              </SlideIn>
+            </section>}
+
+            {/* ══════════ SLIDE 3 — INDICADOR 4 (15%) ══════════ */}
+            {slide === 3 && <section className="w-full max-w-5xl">
               <div className="flex items-center gap-2 mb-3 justify-center">
                 <button onClick={() => setRubricData(rubricAnswers.pregunta1)} type="button" className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity active:scale-95 focus-visible:ring-2 focus-visible:ring-white/50 rounded-lg px-2 py-1" title="Click para respuesta fundamentada">
                   <Target className="w-5 h-5 sm:w-7 sm:h-7 text-emerald-300" />
@@ -658,8 +777,83 @@ export default function Presentacion() {
               </SlideIn>
             </section>}
 
-            {/* ══════════ SLIDE 4 — INDICADOR 6 (20%) ══════════ */}
-            {slide === 4 && <section className="w-full max-w-5xl">
+            {/* ══════════ SLIDE 5 — HERRAMIENTAS Y MÉTODOS ══════════ */}
+            {slide === 5 && <section className="w-full max-w-6xl">
+              <div className="text-center mb-3">
+                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', stiffness: 200, damping: 12 }}
+                  className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 rounded-full bg-purple-500/20 flex items-center justify-center"
+                >
+                  <BookOpen className="w-6 h-6 sm:w-8 sm:h-8 text-purple-300" />
+                </motion.div>
+                <h2 className="text-xl sm:text-3xl font-black text-white">Herramientas Colaborativas y Métodos de Análisis</h2>
+                <p className="text-white/50 text-[10px] sm:text-sm mt-1">Ofimática 365 · Project Libre · Git/GitHub · Vercel · Sala de Proyectos</p>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 max-w-6xl mx-auto">
+                <SlideIn delay={0.1}>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10 h-full">
+                    <h3 className="text-purple-300 font-bold text-xs sm:text-sm mb-2 flex items-center gap-1.5"><BookOpen className="w-4 h-4" /> Herramientas Colaborativas</h3>
+                    <div className="grid grid-cols-2 gap-1.5">
+                      <div className="bg-white/5 rounded-lg p-2 border border-white/5">
+                        <div className="text-white/80 font-semibold text-[9px] sm:text-xs">Ofimática 365</div>
+                        <p className="text-white/40 text-[7px] sm:text-[9px]">Documentación compartida, tablas dinámicas, informes en tiempo real</p>
+                      </div>
+                      <div className="bg-white/5 rounded-lg p-2 border border-white/5">
+                        <div className="text-white/80 font-semibold text-[9px] sm:text-xs">Project Libre</div>
+                        <p className="text-white/40 text-[7px] sm:text-[9px]">Cronograma WBS, ruta crítica, asignación de recursos, seguimiento</p>
+                      </div>
+                      <div className="bg-white/5 rounded-lg p-2 border border-white/5">
+                        <div className="text-white/80 font-semibold text-[9px] sm:text-xs">Git / GitHub</div>
+                        <p className="text-white/40 text-[7px] sm:text-[9px]">Control de versiones, trabajo colaborativo, code review, CI/CD</p>
+                      </div>
+                      <div className="bg-white/5 rounded-lg p-2 border border-white/5">
+                        <div className="text-white/80 font-semibold text-[9px] sm:text-xs">Sala de Proyectos</div>
+                        <p className="text-white/40 text-[7px] sm:text-[9px]">Pizarra para planning semanal, TV para sprints reviews</p>
+                      </div>
+                    </div>
+                  </div>
+                </SlideIn>
+
+                <SlideIn delay={0.15}>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10 h-full">
+                    <h3 className="text-amber-300 font-bold text-xs sm:text-sm mb-2 flex items-center gap-1.5"><BarChart3 className="w-4 h-4" /> Métodos de Análisis Aplicados</h3>
+                    <div className="grid grid-cols-2 gap-1.5">
+                      <div className="bg-white/5 rounded-lg p-2 border border-white/5">
+                        <div className="text-white/80 font-semibold text-[9px] sm:text-xs">Matriz Multicriterio</div>
+                        <p className="text-white/40 text-[7px] sm:text-[9px]">6 criterios ponderados × 3 alternativas. Puntaje 0-20 por criterio.</p>
+                      </div>
+                      <div className="bg-white/5 rounded-lg p-2 border border-white/5">
+                        <div className="text-white/80 font-semibold text-[9px] sm:text-xs">VAN / TIR / PRI</div>
+                        <p className="text-white/40 text-[7px] sm:text-[9px]">Flujo caja descontado 12% anual. Tasa mínima exigida por el CFO.</p>
+                      </div>
+                      <div className="bg-white/5 rounded-lg p-2 border border-white/5">
+                        <div className="text-white/80 font-semibold text-[9px] sm:text-xs">Capacidad Financiera</div>
+                        <p className="text-white/40 text-[7px] sm:text-[9px]">4 ratios: Liquidez, Cobertura, Capacidad Pago, Apalancamiento</p>
+                      </div>
+                      <div className="bg-white/5 rounded-lg p-2 border border-white/5">
+                        <div className="text-white/80 font-semibold text-[9px] sm:text-xs">Benchmark SaaS</div>
+                        <p className="text-white/40 text-[7px] sm:text-[9px]">Comparación con industria (OpenView, SaaS Capital 2024)</p>
+                      </div>
+                    </div>
+                  </div>
+                </SlideIn>
+              </div>
+
+              <SlideIn delay={0.2}>
+                <div className="mt-2 bg-gradient-to-br from-indigo-900/20 to-purple-900/20 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-indigo-500/20 max-w-4xl mx-auto">
+                  <p className="text-indigo-300/80 text-[7px] sm:text-[9px] uppercase tracking-wider text-center font-bold mb-1"><Target className="w-3 h-3 inline mr-0.5" /> Mitigación de Errores en el Análisis</p>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 text-center">
+                    <div className="bg-white/10 rounded-lg p-1.5"><div className="text-rose-300 font-bold text-[9px] sm:text-xs">Sobreestimación ingresos</div><p className="text-white/50 text-[7px] sm:text-[9px]">Benchmarks SaaS reales (15-20%) → ajuste 10% conservador</p></div>
+                    <div className="bg-white/10 rounded-lg p-1.5"><div className="text-rose-300 font-bold text-[9px] sm:text-xs">Riesgo técnico</div><p className="text-white/50 text-[7px] sm:text-[9px]">MVP en 6 meses con 5 roles → tecnología probada, entregas quincenales</p></div>
+                    <div className="bg-white/10 rounded-lg p-1.5"><div className="text-rose-300 font-bold text-[9px] sm:text-xs">Riesgo normativo</div><p className="text-white/50 text-[7px] sm:text-[9px]">Evaluación PDP (privacidad) + PI → opción 3 descartada por incumplimiento</p></div>
+                    <div className="bg-white/10 rounded-lg p-1.5"><div className="text-rose-300 font-bold text-[9px] sm:text-xs">Riesgo financiero</div><p className="text-white/50 text-[7px] sm:text-[9px]">TIR 178.2% &gt;&gt; 12% → capacidad de pago 117% → holgura del 17%</p></div>
+                  </div>
+                </div>
+              </SlideIn>
+            </section>}
+
+            {/* ══════════ SLIDE 6 — INDICADOR 6 (20%) ══════════ */}
+            {slide === 6 && <section className="w-full max-w-5xl">
               <div className="flex items-center gap-2 mb-3 justify-center">
                 <button onClick={() => setRubricData(rubricAnswers.pregunta3)} type="button" className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity active:scale-95 focus-visible:ring-2 focus-visible:ring-white/50 rounded-lg px-2 py-1" title="Click para respuesta fundamentada">
                   <TrendingUp className="w-5 h-5 sm:w-7 sm:h-7 text-violet-300" />
@@ -717,8 +911,8 @@ export default function Presentacion() {
               </SlideIn>
             </section>}
 
-            {/* ══════════ SLIDE 5 — INDICADOR 7 (15%) ══════════ */}
-            {slide === 5 && <section className="max-w-4xl mx-auto w-full">
+            {/* ══════════ SLIDE 7 — INDICADOR 7 (15%) ══════════ */}
+            {slide === 7 && <section className="max-w-4xl mx-auto w-full">
               <div className="flex items-center gap-2 mb-3 justify-center">
                 <button onClick={() => setRubricData(rubricAnswers.pregunta4)} type="button" className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity active:scale-95 focus-visible:ring-2 focus-visible:ring-white/50 rounded-lg px-2 py-1" title="Click para respuesta fundamentada">
                   <Lightbulb className="w-5 h-5 sm:w-7 sm:h-7 text-teal-300" />
@@ -777,8 +971,8 @@ export default function Presentacion() {
               </SlideIn>
             </section>}
 
-            {/* ══════════ SLIDE 6 — GRACIAS ══════════ */}
-            {slide === 6 && <section className="text-center">
+            {/* ══════════ SLIDE 8 — GRACIAS ══════════ */}
+            {slide === 8 && <section className="text-center">
               <Confetti />
               <SlideIn delay={0}>
                 <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}

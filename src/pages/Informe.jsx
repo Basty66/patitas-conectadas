@@ -129,25 +129,54 @@ export default function Informe() {
 
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 sm:p-6 border border-slate-200 dark:border-slate-700 shadow-sm space-y-4">
                   <div>
-                    <h3 className="font-bold text-slate-700 dark:text-slate-300 mb-2">1. Análisis de Viabilidad Económica (VAN, TIR, PRI)</h3>
+                    <h3 className="font-bold text-slate-700 dark:text-slate-300 mb-2">1. Matriz Multicriterio Ponderada (Selección de Alternativas)</h3>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-2">
+                      Se construyó una matriz de decisión con 3 alternativas (MVP Ágil PRO, Cascada Total, SaaS Híbrido) evaluadas en 6 criterios agrupados en 3 dimensiones. Cada criterio se ponderó según su relevancia para el proyecto y se puntuó de 0 a 20 usando como fuente los requerimientos del CFO, CTO y marco normativo chileno.
+                    </p>
+                    <div className="overflow-x-auto text-xs mb-2">
+                      <table className="w-full border-collapse">
+                        <thead>
+                          <tr className="bg-slate-100 dark:bg-slate-700">
+                            <th className="text-left p-1.5 font-semibold">Criterio</th>
+                            <th className="text-center p-1.5 font-semibold">Dimensión</th>
+                            <th className="text-center p-1.5 font-semibold">Peso</th>
+                            <th className="text-center p-1.5 text-emerald-600 font-semibold">Op1 MVP</th>
+                            <th className="text-center p-1.5 text-amber-600 font-semibold">Op2 Cascada</th>
+                            <th className="text-center p-1.5 text-rose-600 font-semibold">Op3 SaaS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr className="border-b border-slate-200 dark:border-slate-700"><td className="p-1.5">Funcionalidad Core</td><td className="text-center p-1.5 text-blue-600">Técnico</td><td className="text-center p-1.5">20%</td><td className="text-center p-1.5 font-bold text-emerald-600">15/20</td><td className="text-center p-1.5 font-bold text-amber-600">20/20</td><td className="text-center p-1.5 font-bold text-rose-600">18/20</td></tr>
+                          <tr className="border-b border-slate-200 dark:border-slate-700"><td className="p-1.5">Integración Sistemas</td><td className="text-center p-1.5 text-blue-600">Técnico</td><td className="text-center p-1.5">20%</td><td className="text-center p-1.5 font-bold text-emerald-600">10/20</td><td className="text-center p-1.5 font-bold text-amber-600">20/20</td><td className="text-center p-1.5 font-bold text-rose-600">15/20</td></tr>
+                          <tr className="border-b border-slate-200 dark:border-slate-700"><td className="p-1.5">Capacidad del Equipo</td><td className="text-center p-1.5 text-amber-600">Admin.</td><td className="text-center p-1.5">15%</td><td className="text-center p-1.5 font-bold text-emerald-600">15/15</td><td className="text-center p-1.5 font-bold text-amber-600">5/15</td><td className="text-center p-1.5 font-bold text-rose-600">10/15</td></tr>
+                          <tr className="border-b border-slate-200 dark:border-slate-700"><td className="p-1.5">Viabilidad Financiera</td><td className="text-center p-1.5 text-amber-600">Admin.</td><td className="text-center p-1.5">15%</td><td className="text-center p-1.5 font-bold text-emerald-600">15/15</td><td className="text-center p-1.5 font-bold text-amber-600">5/15</td><td className="text-center p-1.5 font-bold text-rose-600">10/15</td></tr>
+                          <tr className="border-b border-slate-200 dark:border-slate-700"><td className="p-1.5">Privacidad de Datos</td><td className="text-center p-1.5 text-purple-600">Normativo</td><td className="text-center p-1.5">15%</td><td className="text-center p-1.5 font-bold text-emerald-600">15/15</td><td className="text-center p-1.5 font-bold text-amber-600">15/15</td><td className="text-center p-1.5 font-bold text-rose-600">5/15</td></tr>
+                          <tr className="border-b border-slate-300 dark:border-slate-600"><td className="p-1.5">Propiedad Intelectual</td><td className="text-center p-1.5 text-purple-600">Normativo</td><td className="text-center p-1.5">15%</td><td className="text-center p-1.5 font-bold text-emerald-600">15/15</td><td className="text-center p-1.5 font-bold text-amber-600">15/15</td><td className="text-center p-1.5 font-bold text-rose-600">5/15</td></tr>
+                          <tr className="bg-slate-100 dark:bg-slate-700 font-bold"><td className="p-1.5">Veredicto Final</td><td className="text-center p-1.5"></td><td className="text-center p-1.5">100%</td><td className="text-center p-1.5 text-emerald-600">85% ✅</td><td className="text-center p-1.5 text-amber-600">80% ⚠️</td><td className="text-center p-1.5 text-rose-600">63% ❌</td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-slate-700 dark:text-slate-300 mb-2">2. Análisis de Viabilidad Económica (VAN, TIR, PRI)</h3>
                     <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
                       Se construyó un flujo de caja mensual a 36 meses dividido en dos fases (desarrollo y operación). Se descontaron los flujos a una tasa del 12% anual (0.949% mensual) para calcular el VAN. La TIR se obtuvo por iteración hasta encontrar la tasa que hace VAN = 0. El PRI se calculó por interpolación lineal del flujo acumulado. Resultado: VAN +$305.9M, TIR 178.2%, PRI 20.1 meses — todos superan las exigencias.
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-700 dark:text-slate-300 mb-2">2. Análisis de Factibilidad Técnica y Operativa</h3>
+                    <h3 className="font-bold text-slate-700 dark:text-slate-300 mb-2">3. Análisis de Factibilidad Técnica y Operativa</h3>
                     <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
                       Se evaluaron las tecnologías disponibles (React/Vite, Express/Node.js, PostgreSQL) vs. las requeridas (microservicios, IA avanzada). Se dimensionó el equipo necesario en 5 roles para desarrollo y 4 para operación, con costos de RRHH basados en tarifas de mercado para perfiles TI en Chile.
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-700 dark:text-slate-300 mb-2">3. Análisis de Capacidad Financiera</h3>
+                    <h3 className="font-bold text-slate-700 dark:text-slate-300 mb-2">4. Análisis de Capacidad Financiera</h3>
                     <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
                       Se calcularon 4 indicadores: Liquidez (Runway: 6.7 meses = $56.24M / $8.34M mensuales), Cobertura de Intereses (5.6x = $1.95M EBIT / $0.35M intereses), Capacidad de Pago (117% = $1.95M / $1.66M cuota), y Apalancamiento (8:1 = $50M deuda / $6.24M capital). Todos los indicadores confirman capacidad de pago.
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-700 dark:text-slate-300 mb-2">4. Benchmark Industria SaaS</h3>
+                    <h3 className="font-bold text-slate-700 dark:text-slate-300 mb-2">5. Benchmark Industria SaaS</h3>
                     <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
                       Se compararon los indicadores del proyecto con benchmarks de la industria SaaS (fuentes: OpenView 2024, SaaS Capital 2024). TIR 178.2% vs 25-40% industria (4.5x superior), PRI 20.1m vs 24-36m, Margen Neto 61.8% vs 10-20% (3x superior). Esto demuestra que el proyecto supera ampliamente los estándares de la industria.
                     </p>
