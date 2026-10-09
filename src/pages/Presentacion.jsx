@@ -145,15 +145,15 @@ PRI (Período de Recuperación de la Inversión): Tiempo en que los flujos desco
 
 Los 3 indicadores son POSITIVOS y superan las exigencias. El proyecto es financieramente sólido."`,
   'p4-reflexion': `INDICADOR 7 (15%) — Explica de forma reflexiva su aporte individual.
-  
-RESPUESTA (2 min):
-"MI APORTE INDIVIDUAL: Lideré el modelamiento financiero completo: flujo de caja (2 fases × 36 meses), tabla de amortización (Sistema Francés), VAN/TIR/PRI, estructura de inversión ($50M + $6.24M), y proyección de ingresos Freemium + B2B.
 
-FORTALEZAS: Capacidad analítica para traducir requerimientos de software en variables financieras. Rigor metodológico. Visión integral conectando decisiones técnicas con impacto financiero.
+RESPUESTA (2 min, turno individual):
+"Este indicador es individual — cada integrante responde según su aporte.
 
-DIFICULTAD: Sobreestimación inicial de ingresos (30% conversión Premium). La superé investigando benchmarks SaaS reales (15-20%) y ajustando al 10% conservador.
+CRISTIAN: Mi aporte fue el modelamiento financiero completo: flujo de caja a 36 meses en 2 fases, tabla de amortización Sistema Francés, VAN, TIR, PRI, estructura de inversión ($50M + $6.24M) y proyección ingresos Freemium + B2B. Mi fortaleza: capacidad analítica para traducir requerimientos de software en variables financieras. Mi dificultad: sobreestimé la conversión Premium al 30% — lo superé investigando benchmarks SaaS reales (OpenView 2024: 15-20%) y ajusté al 10% conservador. Mi lección: la viabilidad técnica es inútil sin flujo de caja saludable.
 
-LECCIONES: La viabilidad técnica es inútil sin flujo de caja saludable. Aprendí a evaluar inversiones en tecnología con criterio económico, no solo técnico."`,
+JAIME: Mi aporte fue el desarrollo full-stack: implementación del matching por IA con Sharp.js + distancia RGB, API REST Express 5 + PostgreSQL, frontend React/Vite Tailwind y despliegue CI/CD en Vercel. Mi fortaleza: dominio full-stack e integración de IA en producto real. Mi dificultad: Express 5 no era compatible con serverless — lo resolví con un handler nativo app(req, res). Mi lección: probar arquitectura antes de desarrollar.
+
+GONZALO: Mi aporte fue la investigación de mercado y marco legal: Ley Cholito 21.020, Ley 19.628 datos personales, benchmark SaaS OpenView 2024, y análisis de capacidad financiera. Mi fortaleza: investigación rigurosa de fuentes legales y de mercado. Mi dificultad: escasez de datos SaaS chilenos — usé benchmarks internacionales con ajuste conservador. Mi lección: datos internacionales aplican con ajustes para contexto local."`,
 
   gracias: 'Cierre. "En resumen: VAN +$305.9M, TIR 178.2%, PRI 20.1 meses. Proyecto VIABLE y ALTAMENTE RENTABLE. Todos los indicadores de la rúbrica se cumplen y superan expectativas. Gracias."',
 
@@ -392,7 +392,7 @@ const qaData = [
   },
   {
     q: 'Indicador 7 (15%): Explique de forma reflexiva su aporte individual al trabajo realizado, ¿Cuáles son sus fortalezas, dificultades y lecciones aprendidas en esta etapa?',
-    a: 'APORTE: Lideré el modelamiento financiero completo — flujo de caja (2 fases × 36 meses), tabla de amortización (Sistema Francés), VAN, TIR, PRI, estructura de inversión ($50M préstamo + $6.24M capital), y proyección de ingresos Freemium + B2B. FORTALEZAS: Capacidad analítica para traducir requerimientos de software en variables cuantitativas financieras. Rigor metodológico. Visión integral conectando decisiones técnicas con impacto financiero. DIFICULTAD: Sobreestimación inicial de ingresos (asumí 30% conversión Premium). La superé investigando benchmarks SaaS reales (15-20%) y ajustando al 10% conservador. LECCIONES: La viabilidad técnica es inútil sin flujo de caja saludable. Aprendí a evaluar inversiones en tecnología con criterio económico, no solo técnico.'
+    a: 'CRISTIAN: Aporte — modelamiento financiero completo (flujo caja 36m, VAN/TIR/PRI, amortización, $56.24M). Fortaleza — capacidad analítica y rigor metodológico. Dificultad — sobreestimación ingresos (30%→10%) superada con benchmarks. Lección — viabilidad técnica inútil sin flujo de caja saludable. JAIME: Aporte — desarrollo full-stack (matching IA con Sharp.js, API Express + PostgreSQL, frontend React/Vite, despliegue Vercel). Fortaleza — dominio full-stack e integración IA real. Dificultad — compatibilidad Express 5 con serverless. Lección — probar arquitectura antes de desarrollar. GONZALO: Aporte — investigación mercado + marco legal (Ley Cholito 21.020, Ley 19.628, benchmark OpenView 2024). Fortaleza — investigación rigurosa. Dificultad — datos SaaS chilenos escasos, usó benchmarks internacionales. Lección — datos internacionales aplican con ajustes conservadores.'
   },
   {
     q: 'Evaluación Multicriterio: ¿Cómo se aplicó la matriz de decisión ponderada? ¿Qué criterios se evaluaron y cómo se llegó a la selección de la Opción 1?',
@@ -521,24 +521,25 @@ ECUACIÓN DEL BALANCE: $670M (Ingresos) − $256M (Costos+Interés) = +$414M (Ba
   pregunta4: {
     title: 'Indicador 7 (15%) — Reflexión Individual',
     subtitle: 'Explique de forma reflexiva su aporte individual al trabajo realizado. ¿Cuáles son sus fortalezas, dificultades y lecciones aprendidas en esta etapa?',
-    answer: `Respuesta fundamentada — Indicador 7:
+    answer: `Respuesta fundamentada — Indicador 7 (Reflexión por integrante):
 
-MI APORTE INDIVIDUAL:
-Lideré el modelamiento financiero completo del proyecto: flujo de caja (2 fases × 36 meses), tabla de amortización (Sistema Francés), cálculos de VAN, TIR y PRI, estructura de inversión ($50M préstamo + $6.24M capital), y proyección de ingresos Freemium + B2B.
+CRISTIAN:
+• Aporte: Modelamiento financiero completo — flujo de caja (2 fases × 36 meses), tabla de amortización (Sistema Francés), VAN, TIR, PRI, estructura de inversión ($50M préstamo + $6.24M capital), proyección de ingresos Freemium + B2B.
+• Fortalezas: Capacidad analítica para traducir requerimientos de software en variables financieras. Rigor metodológico. Visión integral conectando decisiones técnicas con impacto financiero.
+• Dificultad: Sobreestimación inicial de ingresos (asumí 30% conversión Premium). Superada investigando benchmarks SaaS reales (15-20%) y ajustando al 10% conservador.
+• Lección: Viabilidad técnica inútil sin flujo de caja saludable. Evaluar inversiones con criterio económico, no solo técnico.
 
-MIS FORTALEZAS:
-- Capacidad analítica para traducir requerimientos de software en variables cuantitativas financieras
-- Rigor metodológico para que cada cifra cuadre al centavo y sea consistente
-- Visión integral conectando decisiones técnicas con su impacto financiero
+JAIME:
+• Aporte: Desarrollo técnico full-stack — implementación algoritmo de matching por similitud de color (Sharp.js + RGB distance), API REST con Express 5 + PostgreSQL (Neon), frontend React + Vite con Tailwind CSS, despliegue y CI/CD en Vercel.
+• Fortalezas: Dominio full-stack (React, Node.js, PostgreSQL). Integración de IA en un producto real con métricas cuantificables. Automatización de despliegue continuo.
+• Dificultad: Compatibilidad de Express 5 con el entorno serverless de Vercel. Superada implementando un handler nativo (app(req, res)) que evita serverless-http.
+• Lección: Probar la arquitectura de despliegue antes de desarrollar para evitar refactors mayores.
 
-PRINCIPAL DIFICULTAD:
-Sobreestimación inicial de ingresos (asumí 30% de conversión Premium). La superé investigando benchmarks SaaS reales (tasa real: 15-20%) y ajustando al 10% conservador. Esto hizo el modelo realista y defendible ante inversionistas.
-
-LECCIONES APRENDIDAS:
-La viabilidad técnica de un software es inútil si no tiene un flujo de caja saludable. Un producto técnicamente brillante puede ser financieramente inviable. Aprendí a defender un proyecto tanto técnica como financieramente ante un directorio o inversionista.
-
-CONTRIBUCIÓN A MI FORMACIÓN:
-Este proyecto me preparó para tomar decisiones de inversión en tecnología con criterio económico, no solo técnico. Hoy puedo evaluar si un proyecto de software es viable, calcular su retorno, y argumentar con datos. Es una habilidad crítica para líderes de proyectos de software.`
+GONZALO:
+• Aporte: Investigación de mercado y marco legal — análisis de Ley Cholito (21.020) y Ley 19.628 sobre protección de datos, benchmark de startups SaaS en Latinoamérica (OpenView 2024, SaaS Capital 2024), y estudio de capacidad financiera de la organización.
+• Fortalezas: Rigurosidad en la investigación de fuentes legales y de mercado. Capacidad de análisis normativo aplicado a requerimientos de software.
+• Dificultad: Escasez de datos de conversión SaaS específicos del mercado chileno. Superada utilizando benchmarks internacionales con ajustes conservadores.
+• Lección: Los datos de referencia internacional son aplicables siempre que se ajusten conservadoramente al contexto local.`
   },
   pregunta5: {
     title: 'Evaluación Multicriterio — Matriz de Decisión Ponderada',
@@ -1554,63 +1555,55 @@ export default function Presentacion() {
             </section>}
 
             {/* ══════════ SLIDE 11 — INDICADOR 7 (15%) ══════════ */}
-            {slide === 11 && <section className="max-w-4xl mx-auto w-full">
-              <div className="flex items-center gap-2 mb-3 justify-center">
+            {slide === 11 && <section className="w-full max-w-6xl">
+              <div className="flex items-center gap-2 mb-2 justify-center">
                 <button onClick={() => setRubricData(rubricAnswers.pregunta4)} type="button" className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity active:scale-95 focus-visible:ring-2 focus-visible:ring-white/50 rounded-lg px-2 py-1" title="Click para respuesta fundamentada">
                   <Lightbulb className="w-5 h-5 sm:w-7 sm:h-7 text-teal-300" />
                   <span className="text-xl sm:text-3xl font-black">Indicador 7 (15%) — Reflexión Individual</span>
                 </button>
               </div>
-              <p className="text-white/50 text-[10px] sm:text-sm text-center mb-3">Explique de forma reflexiva su aporte individual al trabajo realizado. ¿Cuáles son sus fortalezas, dificultades y lecciones aprendidas en esta etapa?</p>
+              <p className="text-white/50 text-[10px] sm:text-sm text-center mb-2">Explique de forma reflexiva su aporte individual al trabajo realizado. ¿Cuáles son sus fortalezas, dificultades y lecciones aprendidas en esta etapa?</p>
 
-              <SlideIn delay={0.1}>
-                <div className="bg-indigo-500/10 backdrop-blur-sm rounded-2xl p-3 sm:p-5 border border-indigo-500/20 mb-3 max-w-3xl mx-auto">
-                  <div className="flex items-center gap-2 mb-1.5"><Lightbulb className="w-4 h-4 text-amber-300" /><span className="text-amber-300 font-bold text-[10px] sm:text-xs uppercase tracking-wider">Mi Aporte Individual</span></div>
-                  <p className="text-white/80 text-xs sm:text-sm leading-relaxed">Lideré el modelamiento financiero completo del proyecto: flujo de caja (2 fases × 36 meses), tabla de amortización (Sistema Francés), cálculos de VAN, TIR y PRI, estructura de inversión ($50M préstamo + $6.24M capital), y proyección de ingresos Freemium + B2B.</p>
-                </div>
-              </SlideIn>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 max-w-6xl mx-auto">
+                <SlideIn delay={0.1}>
+                  <div className="bg-gradient-to-b from-indigo-500/15 to-indigo-500/5 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-indigo-500/20 h-full flex flex-col">
+                    <div className="flex items-center gap-1.5 mb-1.5"><div className="w-6 h-6 rounded-full bg-indigo-500/30 flex items-center justify-center text-indigo-300 font-bold text-[9px] sm:text-xs">CR</div><span className="text-indigo-300 font-bold text-[9px] sm:text-xs">Cristian</span></div>
+                    <div className="text-white/70 text-[7px] sm:text-[9px] mb-1"><span className="text-amber-300/70">Aporte:</span> Modelamiento financiero completo — flujo de caja 36m, VAN/TIR/PRI, tabla amortización, estructura inversión $56.24M.</div>
+                    <div className="text-emerald-300/70 text-[7px] sm:text-[9px] mb-0.5">Fortalezas:</div>
+                    <ul className="text-white/50 text-[6px] sm:text-[8px] leading-relaxed list-disc list-inside mb-1 space-y-0.5"><li>Capacidad analítica financiera</li><li>Rigor metodológico en cada cifra</li><li>Visión técnica-financiera integral</li></ul>
+                    <div className="text-amber-300/70 text-[7px] sm:text-[9px] mb-0.5">Dificultad:</div>
+                    <p className="text-white/50 text-[6px] sm:text-[8px] leading-relaxed mb-1">Sobreestimación ingresos (30%→10%) superada con benchmarks SaaS reales.</p>
+                    <div className="text-blue-300/70 text-[7px] sm:text-[9px] mb-0.5">Lección:</div>
+                    <p className="text-white/50 text-[6px] sm:text-[8px] leading-relaxed">Viabilidad técnica inútil sin flujo de caja saludable.</p>
+                  </div>
+                </SlideIn>
 
-              <div className="grid grid-cols-3 gap-2 sm:gap-3 max-w-3xl mx-auto">
+                <SlideIn delay={0.15}>
+                  <div className="bg-gradient-to-b from-emerald-500/15 to-emerald-500/5 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-emerald-500/20 h-full flex flex-col">
+                    <div className="flex items-center gap-1.5 mb-1.5"><div className="w-6 h-6 rounded-full bg-emerald-500/30 flex items-center justify-center text-emerald-300 font-bold text-[9px] sm:text-xs">JA</div><span className="text-emerald-300 font-bold text-[9px] sm:text-xs">Jaime</span></div>
+                    <div className="text-white/70 text-[7px] sm:text-[9px] mb-1"><span className="text-amber-300/70">Aporte:</span> Desarrollo técnico full-stack — implementación matching IA (Sharp.js + RGB), API REST Express + PostgreSQL, frontend React/Vite.</div>
+                    <div className="text-emerald-300/70 text-[7px] sm:text-[9px] mb-0.5">Fortalezas:</div>
+                    <ul className="text-white/50 text-[6px] sm:text-[8px] leading-relaxed list-disc list-inside mb-1 space-y-0.5"><li>Dominio full-stack React + Node.js</li><li>Integración IA en producto real</li><li>Despliegue CI/CD en Vercel</li></ul>
+                    <div className="text-amber-300/70 text-[7px] sm:text-[9px] mb-0.5">Dificultad:</div>
+                    <p className="text-white/50 text-[6px] sm:text-[8px] leading-relaxed mb-1">Compatibilidad Express 5 con serverless Vercel — solución con handler nativo.</p>
+                    <div className="text-blue-300/70 text-[7px] sm:text-[9px] mb-0.5">Lección:</div>
+                    <p className="text-white/50 text-[6px] sm:text-[8px] leading-relaxed">Probar arquitectura antes de desarrollar para evitar refactors mayores.</p>
+                  </div>
+                </SlideIn>
+
                 <SlideIn delay={0.2}>
-                  <div className="bg-emerald-500/10 backdrop-blur-sm rounded-xl p-2 sm:p-3.5 border border-emerald-500/20 h-full">
-                    <div className="w-7 h-7 rounded-full bg-emerald-500/20 flex items-center justify-center mb-1.5"><TrendingUp className="w-3.5 h-3.5 text-emerald-300" /></div>
-                    <div className="text-emerald-300 font-bold text-[9px] sm:text-xs mb-0.5">Fortalezas</div>
-                    <ul className="text-white/60 text-[7px] sm:text-[10px] leading-relaxed space-y-0.5 list-disc list-inside">
-                      <li>Capacidad analítica para traducir requerimientos de software a variables financieras</li>
-                      <li>Rigor metodológico para que cada cifra cuadre al centavo</li>
-                      <li>Visión integral conectando decisiones técnicas con impacto financiero</li>
-                    </ul>
-                  </div>
-                </SlideIn>
-                <SlideIn delay={0.3}>
-                  <div className="bg-amber-500/10 backdrop-blur-sm rounded-xl p-2 sm:p-3.5 border border-amber-500/20 h-full">
-                    <div className="w-7 h-7 rounded-full bg-amber-500/20 flex items-center justify-center mb-1.5"><Target className="w-3.5 h-3.5 text-amber-300" /></div>
-                    <div className="text-amber-300 font-bold text-[9px] sm:text-xs mb-0.5">Dificultades</div>
-                    <ul className="text-white/60 text-[7px] sm:text-[10px] leading-relaxed space-y-0.5 list-disc list-inside">
-                      <li>Sobreestimación inicial de ingresos (asumí 30% conversión Premium)</li>
-                      <li>Superada investigando benchmarks SaaS reales (15-20%)</li>
-                      <li>Ajuste a tasa conservadora del 10% — modelo realista y defendible</li>
-                    </ul>
-                  </div>
-                </SlideIn>
-                <SlideIn delay={0.4}>
-                  <div className="bg-blue-500/10 backdrop-blur-sm rounded-xl p-2 sm:p-3.5 border border-blue-500/20 h-full">
-                    <div className="w-7 h-7 rounded-full bg-blue-500/20 flex items-center justify-center mb-1.5"><BookOpen className="w-3.5 h-3.5 text-blue-300" /></div>
-                    <div className="text-blue-300 font-bold text-[9px] sm:text-xs mb-0.5">Lecciones</div>
-                    <ul className="text-white/60 text-[7px] sm:text-[10px] leading-relaxed space-y-0.5 list-disc list-inside">
-                      <li>Viabilidad técnica es inútil sin flujo de caja saludable</li>
-                      <li>Evaluar inversiones en tecnología con criterio económico</li>
-                      <li>Defensa técnica + financiera ante inversionistas</li>
-                    </ul>
+                  <div className="bg-gradient-to-b from-amber-500/15 to-amber-500/5 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-amber-500/20 h-full flex flex-col">
+                    <div className="flex items-center gap-1.5 mb-1.5"><div className="w-6 h-6 rounded-full bg-amber-500/30 flex items-center justify-center text-amber-300 font-bold text-[9px] sm:text-xs">GO</div><span className="text-amber-300 font-bold text-[9px] sm:text-xs">Gonzalo</span></div>
+                    <div className="text-white/70 text-[7px] sm:text-[9px] mb-1"><span className="text-amber-300/70">Aporte:</span> Investigación de mercado y marco legal — Ley Cholito (21.020), Ley 19.628, benchmark SaaS (OpenView 2024), análisis de capacidad financiera.</div>
+                    <div className="text-emerald-300/70 text-[7px] sm:text-[9px] mb-0.5">Fortalezas:</div>
+                    <ul className="text-white/50 text-[6px] sm:text-[8px] leading-relaxed list-disc list-inside mb-1 space-y-0.5"><li>Investigación rigurosa de fuentes</li><li>Análisis normativo aplicado</li><li>Benchmark con industria real</li></ul>
+                    <div className="text-amber-300/70 text-[7px] sm:text-[9px] mb-0.5">Dificultad:</div>
+                    <p className="text-white/50 text-[6px] sm:text-[8px] leading-relaxed mb-1">Encontrar datos de conversión SaaS chilenos — usó benchmarks internacionales.</p>
+                    <div className="text-blue-300/70 text-[7px] sm:text-[9px] mb-0.5">Lección:</div>
+                    <p className="text-white/50 text-[6px] sm:text-[8px] leading-relaxed">Datos internacionales aplican con ajustes conservadores para mercado local.</p>
                   </div>
                 </SlideIn>
               </div>
-
-              <SlideIn delay={0.5}>
-                <blockquote className="max-w-2xl mx-auto mt-2 sm:mt-3 text-center px-4">
-                  <p className="text-white/80 text-xs sm:text-sm italic leading-relaxed">"La viabilidad técnica de un software <span className="text-orange-200 font-semibold">es inútil</span> si no tiene un flujo de caja saludable. Hoy puedo defender un proyecto tanto técnica como financieramente ante un directorio o inversionista."</p>
-                </blockquote>
-              </SlideIn>
             </section>}
 
             {/* ══════════ SLIDE 12 — IMPACTO SOCIAL ══════════ */}
